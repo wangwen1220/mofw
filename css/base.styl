@@ -1,0 +1,209 @@
+/*
+名称：基础样式模块
+简介：可通用所有项目，包含样式重设和常用样式，参考自 Alice CSS
+特色：简洁明了、适应中文、兼容主流浏览器
+作者：王文 wangwen1220#139.com
+更新：2014-8-1
+*/
+
+/* Mixin
+----------------------------------------------------------------------------- */
+// TODO: 当参数为 box 时，原混合无效
+nib-display = display
+display()
+  if arguments is box
+    display: vendor-value(arguments)
+  else
+    nib-display arguments
+
+ // 三角
+arrow(direction = top, n = 5px, color = #666)
+  display inline-block
+  border n solid transparent
+  width 0
+  height 0
+  line-height 0
+  vertical-align middle
+  {'border-' + direction + '-color'} color
+
+/* 样式重设
+----------------------------------------------------------------------------- */
+/* 清除内外边距，内外边距通常让各个浏览器样式的表现位置不同 */
+body,h1,h2,h3,h4,h5,h6,hr,div,p,blockquote, /* structural elements 结构元素 */
+dl,dt,dd,ul,ol,li, /* list elements 列表元素 */
+pre,code, /* text formatting elements 文本格式元素 */
+form,fieldset,legend,input,textarea,button, /* form elements 表单元素 */
+th,td, /* table elements 表格元素 */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section /* HTML5 elements HTML5 元素
+*/
+  margin 0
+  padding 0
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体？ */
+html
+  color #000
+  background #fff
+  -webkit-text-size-adjust none
+  -ms-text-size-adjust none
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,button,input,select,textarea
+  font 16px/1.5 fonts
+
+/* 重设 HTML5 标签，IE 需要在 js 中 createElement(TAG) */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
+  display block
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio,canvas,video
+  display inline-block
+
+/* 使表单元素在 IE 下能继承字体大小 */
+input,select,textarea
+  font-size 100%
+
+/* Allow only vertical resizing of textareas */
+textarea
+  resize vertical
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+textarea[contenteditable]
+  -webkit-appearance none
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table
+  border-collapse collapse
+  border-spacing 0
+
+/* 去除默认边框 */
+fieldset,img
+  border 0
+
+/* 清除图片底部空白间隙 */
+img
+  vertical-align bottom
+
+/* 一致的 del 样式 */
+del
+  text-decoration line-through
+
+/* 将斜体扶正 */
+address,caption,cite,code,dfn,em,th,var,i
+  font-style normal
+  font-weight 500
+
+/* 代码字体 */
+code,kbd,pre,samp
+  font-family monospace, serif
+  font-size 1em
+
+/* 去掉列表前的标识 li 会继承 */
+ol,ul
+  list-style none
+
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption,th
+  text-align left
+
+/* 来自 Yahoo，让标题都自定义，适应多个系统应用 */
+h1,h2,h3,h4,h5,h6
+  font-size 100%
+  font-weight 500
+
+blockquote,q
+  quotes none
+
+blockquote:before,blockquote:after,q:before,q:after
+  content ''
+
+/* 统一上标和下标 */
+sub,sup
+  position relative
+  font-size 75%
+  line-height 0
+  vertical-align baseline
+
+sup
+  top -0.5em
+
+sub
+  bottom -0.25em
+
+/* 标记，类似于手写的荧光笔的作用 */
+mark
+  background #fffdd1
+
+/* 默认不显示下划线，保持页面简洁 */
+ins,a
+  text-decoration none
+
+/* 常用样式
+----------------------------------------------------------------------------- */
+/* 浮动 */
+.fn-fl,.fn-fr
+  display inline
+
+.fn-fl
+  float left
+
+.fn-fr
+  float right
+
+.fn-fn
+  float none
+
+/* 清理浮动 */
+.fn-clear,.clearfix
+  clearfix()
+
+/* 清除浮动 */
+.fn-cl
+  clear left
+
+.fn-cr
+  clear right
+
+.fn-cb
+  clear both
+
+/* 隐藏元素 */
+.fn-hide
+  display none
+
+/* 单行文字溢出时出现省略号，需设定宽度 */
+.fn-text-overflow,.fn-ellipsis
+  overflow ellipsis
+
+/* 简单的渐变 */
+.fn-linear
+  background linear-gradient(top, #fcfcfc, #f1f1f1)
+
+/* 浅色的渐变 */
+.fn-linear-light
+  background linear-gradient(top, #fcfcfc, #f9f9f9)
+
+/* 人民币符号 */
+.fn-rmb
+  font-family arial
+  font-style normal
+  padding-right 4px
+
+/* chrome 下字体过小的问题 */
+.fn-webkit-adjust
+  -webkit-text-size-adjust none
+
+/* 三角 */
+.fn-arrow
+  arrow bottom 4px #666
+
+.fn-arrow-up
+  arrow bottom
+
+.fn-arrow-down
+  arrow top
+
+.fn-arrow-left
+  arrow right
+
+.fn-arrow-right
+  arrow left

@@ -1,0 +1,56 @@
+  <?php if (!preg_match('/\bscroll-refresh\b/', $class)) : ?>
+  <footer id="footer">
+    <nav>
+      <h5>我们的网站：</h5>
+      <ul>
+        <li><a href="#">半导体照明网</a> |</li>
+        <li><a href="#">太阳能光伏网</a> |</li>
+        <li><a href="#">激光网</a> |</li>
+        <li><a href="#">3D打印网</a> |</li>
+        <li><a href="#">电力网</a> |</li>
+        <li><a href="#">智能电网</a> |</li>
+        <li><a href="#">节能环保网</a> |</li>
+        <li><a href="#">电子工程网</a> |</li>
+        <li><a href="#">电源网</a> |</li>
+        <li><a href="#">光通讯网</a> |</li>
+        <li><a href="#">工控网</a> |</li>
+        <li><a href="#">照明网</a> |</li>
+        <li><a href="#">风电</a>网 </li>
+        <li><a href="#">仪器仪表网</a> |</li>
+        <li><a href="#">显示网</a> |</li>
+        <li><a href="#">光学网</a> |</li>
+        <li><a href="#">通信网</a> |</li>
+        <li><a href="#">机器人网</a> |</li>
+        <li><a href="#">锂电网</a> |</li>
+        <li><a href="#">物联网</a> |</li>
+        <li><a href="#">智能家居</a> |</li>
+        <li><a href="#">可穿戴设备网</a></li>
+      </ul>
+    </nav>
+
+    <p class="copyright">OFweek手机网 m.ofweek.com</p>
+
+    <div class="help">
+      <a href="#" class="feedback"><span>问题反馈</span></a>
+      <a href="#" class="gopc"><span>访问电脑版</span></a>
+      <a href="#header" id="gotop" class="gotop"><span>返回顶部</span></a>
+    </div>
+  </footer>
+  <?php endif ?>
+
+  <div id="mask" class="w-mask"></div>
+
+  <script src="js/zepto-1.0.js"></script>
+  <script src="js/fastclick.js"></script>
+  <script src="js/gmu.js"></script>
+
+  <script src="js/jquery-2.1.1.js"></script>
+  <script src="js/jquery-dotdotdot.js"></script>
+
+  <?php if (preg_match('/\bscroll-refresh\b/', $class)) : ?>
+  <script src="js/$lite.js"></script>
+  <?php endif ?>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
