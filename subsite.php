@@ -1,8 +1,8 @@
 <?php
 require_once 'config.php';
 
-// $class = 'subsite lights';
-$class = 'subsite iot';
+$class = 'subsite lights';
+// $class = 'subsite iot';
 // $class = 'subsite threedprint';
 // $class = 'subsite ee';
 // $class = 'subsite robot';

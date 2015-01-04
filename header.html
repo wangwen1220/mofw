@@ -10,7 +10,7 @@
   <meta name="keywords" content="<?php echo $keywords ?>">
   <meta name="description" content="<?php echo $description ?>">
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/cssrefresh.js"></script>
+  <!-- // <script src="js/cssrefresh.js"></script> -->
   <!-- // <script src="http://192.168.2.213:8080/target/target-script-min.js#anonymous"></script> -->
   <link rel="apple-touch-icon-precomposed" href="favicon.png">
   <link rel="icon" href="/favicon.png">
@@ -26,10 +26,10 @@
 
   <header id="header">
     <!-- lights -->
-    <?php if (preg_match('/\blights news-list\b/', $class)) : ?>
+    <?php if (preg_match('/\bsubsite lights news-list\b/', $class)) : ?>
     <h1 class="position"><a href="subsite.php">OFweek半导体照明网</a> <i>&gt;</i> <a href="#">新闻列表</a></h1>
-    <?php elseif (preg_match('/\blights\b/', $class)) : ?>
-    <h1 class="logo"><a class="dropmenu-trigger" href="#"><img src="img/logo-lights.png" alt="OFweek半导体照明网"></a></h1>
+    <?php elseif (preg_match('/\bsubsite lights\b/', $class)) : ?>
+    <h1 class="logo"><a class="dropmenu-trigger" href="#"><img src="img/logo-global.png" alt="OFweek"><span>半导体照明网</span></a></h1>
 
     <?php elseif (preg_match('/\bnews-center\b/', $class)) : ?>
     <h1 class="position"><a href="/">OFweek新闻中心</a></h1>
@@ -112,8 +112,9 @@
         <a href="subsite-news-list.php">半导体照明网新闻列表</a>
       </div>
 
-      <form action="#" method="post" class="w-search">
+      <form action="search.php" class="w-search js-search">
         <input type="text" name="q">
+        <input type="hidden" name="url">
         <button type="submit">搜索</button>
       </form>
     </nav>

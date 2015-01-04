@@ -115,4 +115,4 @@ gulp.task('watch', function() {
 
 // The default task (called when you run `gulp` from cli)
 // gulp.task('default', ['stylus', 'coffee', 'jsmin', 'watch']);
-gulp.task('default', ['stylus', 'jsmin', 'watch']);
+gulp.task('default', ['stylus', 'lint', 'jsmin', 'watch']);

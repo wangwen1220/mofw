@@ -87,7 +87,7 @@ include 'header.html';
         </div>
       </div>
     </div>
-    <a data-url="refresh.php" class="w-viewmore ui-refresh-down">上拉加载</a>
+    <a data-url="refresh.php" class="w-viewmore ui-refresh-down">上拉加载更多</a>
   </div>
 
 <?php include 'footer.html'; ?>

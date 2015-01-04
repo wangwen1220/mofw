@@ -13,7 +13,7 @@ Main Style
 /* Var
 ============================================================================= */
 support-for-ie = false
-fonts = 'Microsoft Yahei','helvetica','arial'
+fonts = 'Microsoft Yahei', helvetica, arial
 red = #D40000
 red-light = #CC0
 blue = #1A4991
@@ -132,12 +132,10 @@ a:hover
   overflow hidden
   text-align center
   background #f8f8f8
-
-.ad a
-  display block
-
-.ad img
-  width 100%
+  a
+    display block
+  img
+    width 100%
 
 /* Plugin
 ========================================================================== */
@@ -152,12 +150,12 @@ a:hover
   height 165px
   text-align center
 
-  & .wui-carousel-cnt
+  .wui-carousel-cnt
     position relative
     height 100%
     overflow hidden
 
-    & .item
+    .item
       position absolute
       width 100%
       height 100%
@@ -171,16 +169,16 @@ a:hover
         z-index 1
         visibility visible
 
-      & > a
+      > a
         display block
         width 100%
         height 100%
         overflow hidden
 
-        & img
+        img
           width 100%
 
-      & > p
+      > p
         position absolute
         bottom 0
         width 100%
@@ -195,12 +193,12 @@ a:hover
         pointer-events none
         background rgba(0,0,0,.5)
 
-        & a
+        a
           display block
           margin-right 5rem
           overflow ellipsis
 
-          & i
+          i
             position relative
             display inline-block
             margin-right 10px
@@ -214,7 +212,7 @@ a:hover
             vertical-align middle
             background yellow
 
-          & i:after
+          i:after
             position absolute
             right -6px
             top 50%
@@ -222,7 +220,7 @@ a:hover
             content ''
             arrow left 3px yellow
 
-  & .wui-carousel-ctrl
+  .wui-carousel-ctrl
     position absolute
     z-index 2
     bottom 0
@@ -232,7 +230,7 @@ a:hover
     text-align right
     font-size 0
 
-    & .item
+    .item
       display inline-block
       margin 0 2px
       width 6px
@@ -254,14 +252,14 @@ a:hover
 .w-btn, a.w-btn
   display inline-block
   padding .5em 1em
-  border 1px solid rgba(0,0,0,.25)
+  border 1px solid rgba(0, 0, 0, .25)
   border-radius 0.3em
   background-image none
-  box-shadow 0 1px rgba(0,0,0,.15), inset 0 1px rgba(255,255,255,.15)
+  box-shadow 0 1px rgba(0, 0, 0, .15), inset 0 1px rgba(255, 255, 255, .15)
   color #fff
   text-align center
   text-decoration none
-  text-shadow 1px 1px rgba(0,0,0,.1)
+  text-shadow 1px 1px rgba(0, 0, 0, .1)
   font-size 100%
   font-family inherit
   font-weight inherit
@@ -272,7 +270,7 @@ a:hover
 
 .w-btn:hover, .w-btn:focus
   text-decoration none
-  background-image linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.1))
+  background-image linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1))
 
 .w-btn:focus
   outline thin dotted
@@ -280,7 +278,7 @@ a:hover
   outline-offset -2px
 
 .w-btn:active
-  box-shadow 0 1px rgba(0,0,0,.2), inset 0 1px rgba(0,0,0,.05)
+  box-shadow 0 1px rgba(0, 0, 0, .2), inset 0 1px rgba(0, 0, 0, .05)
   outline none
 
 .w-btn-blue, a.w-btn-blue
@@ -369,19 +367,19 @@ a:hover
   border-top 2px solid red
   background #F3F3F3
 
-.w-box-hd .title
-  padding 0 .5em
-  overflow hidden
-  font-size 1.1em
-  font-weight bold
-  color red
+  .title
+    padding 0 .5em
+    overflow hidden
+    font-size 1.1em
+    font-weight bold
+    color red
 
-.w-box-hd .more
-  flex 1
-  text-align right
+  .more
+    flex 1
+    text-align right
 
-.w-box-hd .more a
-  margin-right .5em
+  .more a
+    margin-right .5em
 
 .w-box-bd
   padding 0 10px
@@ -406,15 +404,6 @@ a:hover
     vertical-align -1px
   &.loading:after
     content none
-  // &.loading:before
-  //   content ''
-  //   display inline-block
-  //   margin-right 5px
-  //   width 18px
-  //   height 18px
-  //   background #444 url(../img/loading.gif) 0 50% no-repeat
-  //   box-sizing 18px
-  //   vertical-align top
   &.mod2
     border 1px solid #d6d6d6
     border-radius 1px
@@ -422,12 +411,12 @@ a:hover
     background-color #fff
     &:after
       border-top-color #666
-  & .ui-refresh-icon
+  .ui-refresh-icon
     display none
 
-/* 上拉加载页 */
+// 上拉加载页
 .scroll-refresh .w-viewmore
-  opacity 0
+  // opacity 0
   // margin-top -10px
   margin-left 10px
   margin-right 10px
@@ -445,14 +434,14 @@ a:hover
   padding 10px 0
   clearfix()
 
-  & .pic
+  .pic
     float left
     margin-right 10px
 
-  & .txt
+  .txt
     overflow hidden
 
-    & h3
+    h3
       max-height 48px
       color blue-dark
       overflow hidden
@@ -467,7 +456,7 @@ a:hover
       // max-height 48px
       // color blue-dark
 
-      & a
+      a
         display block
 
 /* 带边框 */
@@ -475,14 +464,14 @@ a:hover
   margin 10px 0 0
   padding 0 0 10px
   border-bottom 1px #DEDEDE solid
-  & .txt h3
+  .txt h3
     color #000
-  & .txt p
+  .txt p
     margin-top 5px
     font-size .75rem
     color #999
     vertical-align bottom
-    & time
+    time
       margin-left 1.5rem
 
 // 横屏
@@ -492,7 +481,7 @@ a:hover
     flex-wrap wrap
     justify-content space-between
 
-    & .w-art
+    .w-art
       width 49%
 
 /*
@@ -503,20 +492,22 @@ a:hover
 .w-headline
   margin-top 10px
   text-align center
-  & h2
+  h2
     height 25px
     line-height 25px
     overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
     font-weight bold
     font-size 1.1rem
     color #1A4991
-  & p
+  p
     height 24px
     line-height 24px
     overflow hidden
     color blue-dark
     font-size .88em
-    & i
+    i
       color #999
       font-family Serif
       vertical-align middle
@@ -533,16 +524,16 @@ a:hover
   word-wrap break-word
   border-bottom 1px #DEDEDE solid
 
-  & a
+  > a
     display block
     color blue-dark
     overflow ellipsis
 
-  & a strong
+  > a strong
     font-weight bold
     color blue
 
-  & a em
+  > a em
     color blue
 
 /* headline */
@@ -553,15 +544,19 @@ a:hover
 // 横屏
 @media only screen and (min-width 321px) and (orientation landscape)
   .w-list
-    display flex
-    flex-wrap wrap
-    justify-content space-between
+    clearfix()
+    // display flex
+    // flex-wrap wrap
+    // justify-content space-between
     &.headline
       display block
 
   .w-list-item
-    // width 50%
-    flex 1 50%
+    float left
+    width 50%
+    // flex 1 50%
+    &:nth-child(odd) > a
+      margin-right 1em
 
 /*
 @name w-search
@@ -573,31 +568,33 @@ a:hover
   margin 20px 0
   height 36px
   border 1px #D1D1D1 solid
-  border-radius .3rem
+  border-radius 5px
   overflow hidden
 
-.w-search input
-  display block
-  padding 10px 5px
-  flex 1
-  // width 480px
-  height 16px
-  border none
-  outline none
-  font-size 20px
+  input
+    flex 1
+    display block
+    padding 10px 5px
+    // width 480px
+    height 16px
+    line-height 16px
+    border none
+    outline none
+    font-size 20px
 
-.w-search button
-  display block
-  padding 0 1rem
-  // width 100px
-  height 100%
-  border none
-  border-left 1px #D1D1D1 solid
-  text-align center
-  color #666
-  font-size 1rem
-  // letter-spacing .2em
-  background #F9F9F8
+  button
+    display block
+    padding 0 10px
+    // width 100px
+    height 100%
+    border none
+    border-left 1px #D1D1D1 solid
+    text-align center
+    color #666
+    font-size 1rem
+    white-space nowrap
+    // letter-spacing .2em
+    background #F9F9F8
 
 /*
 @name w-cats
@@ -612,7 +609,7 @@ a:hover
   height 21px
   line-height 21px
   background #CDCDCD
-  & .title
+  .title
     position relative
     display inline-block
     padding 0 1em
@@ -620,21 +617,21 @@ a:hover
     font-size .8em
     vertical-align bottom
     background yellow
-  & .title:after
+  .title:after
     position absolute
     bottom -10px
     left 50%
     margin-left -2px
     content ''
     arrow top 5px yellow
-  & .title.red
+  .title.red
     background red
-  & .title.red:after
+  .title.red:after
     arrow top 5px red
 
 .w-cats-bd
   padding 0 1em 1em 0
-  & li
+  li
     display inline-block
     margin 1em 0 0 1em
     font-size .8em
@@ -647,7 +644,7 @@ a:hover
 */
 .w-form
   margin 10px
-  & .error-msg
+  .error-msg
     margin 15px 0
     text-align center
     font-size 1rem
@@ -659,9 +656,9 @@ a:hover
     margin-bottom -5px
     font-size .88rem
     color #888
-    & em
+    em
       color blue
-  & .input
+  .input
     display flex
     position relative
     padding 0 10px
@@ -672,26 +669,26 @@ a:hover
     box-shadow 0 2px 3px rgba(0,0,0,.08) inset
     white-space nowrap
     background #fff
-  & label
+  label
     display inline-block
     color #888
     font-weight bold
-  & label.icon
+  label.icon
     text-indent -9999px
     width 18px
     // height 18px
     vertical-align middle
     background url(../img/icon-login.png) 50% 50% no-repeat
     background-size contain
-  // & label.userid
+  // label.userid
   //   background-image url(../img/icon-login.png)
-  & label.password
+  label.password
     background-image url(../img/icon-password.png)
-  & label.email
+  label.email
     background-image url(../img/icon-email.png)
-  & input[type='text'],
-  & input[type='email'],
-  & input[type='password']
+  input[type='text'],
+  input[type='email'],
+  input[type='password']
     flex 1
     display block
     margin 8px 0 8px 15px
@@ -702,7 +699,7 @@ a:hover
     border none
     outline none
     background #fff
-  & button
+  button
     display block
     margin-top 20px
     width 100%
@@ -727,24 +724,24 @@ a:hover
   padding 10px
   border-bottom 1px #ccc solid
   background #fff
-  & .avatar
+  .avatar
     width 64px
     height 64px
     overflow hidden
     border 1px #ccc solid
     border-radius 5px
-    & img
+    img
       display block
       width 100%
       height 100%
-  & .info
+  .info
     flex 1
     padding-left 1rem
-    & h3
+    h3
       font-size .95rem
       font-weight bold
       color #666
-    & li
+    li
       margin-top 3px
       font-size .66rem
       color #999
@@ -756,7 +753,7 @@ a:hover
 */
 .w-dialog
   background #fff
-  & .ui-dialog-title
+  .ui-dialog-title
     height 32px
     line-height 32px
     padding 0 10px
@@ -766,34 +763,34 @@ a:hover
     font-weight bold
     color red
     background none
-  & .ui-dialog-close
+  .ui-dialog-close
     top 0
     right 10px
     padding 0
     margin 0
     border-radius 0
-    & .ui-icon
+    .ui-icon
       width 22px
       height 22px
       background #999 url(../img/gmu/icon-dialog-close.png) no-repeat
       background-size contain
-  & .ui-dialog-content
+  .ui-dialog-content
     padding 10px
 
 /* 登录弹窗 */
 .w-dialog-login
   .w-form
     margin -10px 0 0
-    & .w-form-item button
+    .w-form-item button
       margin-top 0
       height 35px
       line-height 35px
       font-size 1rem
-    & .reg-now
+    .reg-now
       float left
       margin .5rem 0 1rem
       font-size .8rem
-    & .forget-password
+    .forget-password
       float right
       margin .5rem 0 1rem
       font-size .8rem
@@ -820,7 +817,16 @@ html.account #header
 #header .logo a
   display inline-block
   height 100%
-  & img
+  > span
+    display inline-block
+    margin-left 4px
+    font-size 18px
+    font-weight bold
+    color red
+    line-height 1
+    margin-bottom -3px
+    vertical-align bottom
+  > img
     height 100%
   &.dropmenu-trigger:after
     content ''
@@ -852,12 +858,12 @@ html.account #header
 
 #header .position
   @extend #header .logo
-  & a
+  a
     // display inline-block
     font-size .9em
     color blue
     vertical-align middle
-  & a:first-child:before
+  a:first-child:before
     content ''
     display inline-block
     margin-right 8px
@@ -867,7 +873,7 @@ html.account #header
     background-size 20px
     vertical-align bottom
     // vertical-align -3px
-  & i
+  i
     display inline-block
     margin 0 2px
     width 5px
@@ -886,25 +892,23 @@ html.account #header
   text-align right
   // background #ccc
 
-  & a
+  > a
     display inline-block
-    margin-left 1em
+    margin -10px -10px -10px 0
+    padding 32px 10px 10px
     width 20px
     height 0
-    padding-top 22px
     overflow hidden
-    background-position 50% 100%
+    background-position 50% 50%
     background-repeat no-repeat
-    background-size contain
+    background-size 20px
     vertical-align middle
+    font-size 0
+    // background-color #ccc
 
-  // & a.login
-    // image '../img/icon-login.png'
-    // background-image url(../img/icon-login.png)
-
-  & a.dropmenu-trigger
-    // image '../img/dropmenu-trigger.png'
-    background-image url(../img/dropmenu-trigger.png)
+    &.dropmenu-trigger
+      // image '../img/dropmenu-trigger.png'
+      background-image url(../img/dropmenu-trigger.png)
 
 /** Dropmenu **/
 #dropmenu nav
@@ -919,7 +923,7 @@ html.account #header
   padding 0 10px
   background #fff
 
-  & > h2
+  > h2
     // margin-bottom 5px
     margin-bottom 4px
     // padding 13px 0 7px
@@ -928,29 +932,40 @@ html.account #header
     font-size .95rem
     // color #AA0202
 
-  & .chanel
+  > .chanel
     margin-bottom 5px
 
-    & > li
-      display flex
+    > li
+      // display flex
       justify-content space-between
       // display box
       // box-pack justify
       margin 8px 0
+      text-align justify
+      font-size 0
 
-    & > li a
-      // display block
-      padding 0 10px
-      height 24px
-      line-height 24px
-      overflow hidden
-      border 1px #CCC solid
-      text-align center
-      // font-size 1.1rem
-      font-size 1rem
-      color #666
+      &:after
+        content ''
+        display inline-block
+        width 100%
+        height 0
+        overflow hidden
 
-  & .nav
+      > a
+        // display block
+        display inline-block
+        width auto
+        padding 0 8px
+        height 24px
+        line-height 24px
+        overflow hidden
+        border 1px #CCC solid
+        text-align center
+        // font-size 1.1rem
+        font-size 1rem
+        color #666
+
+  > .nav
     // display flex
     // flex-wrap wrap
     // justify-content space-between
@@ -960,21 +975,22 @@ html.account #header
     // font-size 0
     line-height 0
 
-    & > a
-      @extend #dropmenu nav .chanel > li a
-      flex none
+    > a
+      @extend #dropmenu nav > .chanel > li > a
+      // flex none
       display inline-block
       width auto
       margin 4px 0
       // margin-right .5rem
 
-  /* 登录框 */
-  & .form-login
+  // 登录框
+  .form-login
+    clear both
     display flex
     justify-content space-between
     margin 0
 
-    & .w-form-item
+    .w-form-item
       flex 2
       margin 10px 5px 5px 0
 
@@ -982,23 +998,23 @@ html.account #header
         flex 0 58px
         margin-right 0
 
-      & .input
+      .input
         padding 0 5px
         height 33px
         line-height 33px
 
-      & label.icon
+      label.icon
         width 16px
 
-      & input[type='text'],
-      & input[type='email'],
-      & input[type='password']
+      input[type='text'],
+      input[type='email'],
+      input[type='password']
         margin 6px 0 6px 5px
         height 21px
         line-height 21px
         font-size .95rem
 
-      & button
+      button
         margin-top 0
         height 35px
         line-height 35px
@@ -1006,7 +1022,7 @@ html.account #header
         letter-spacing normal
 
   /* 用户信息 */
-  & .user-info
+  .user-info
     display flex
     margin-bottom 5px
     padding 10px 0
@@ -1014,29 +1030,42 @@ html.account #header
     font-size .95rem
     color #666
 
-    & .avatar img
+    .avatar img
       width 24px
       height 24px
 
-    & .name
+    .name
       margin-left 5px
       vertical-align middle
 
-    & .center
+    .center
       margin-left 10px
       color blue
       vertical-align middle
 
-    & .logout
+    .logout
       flex 1
       text-align right
       vertical-align middle
+
+// 横屏
+@media only screen and (min-width 321px) and (orientation landscape)
+  #dropmenu nav
+    > .chanel
+    > h2:nth-child(2)
+      float left
+      clear right
+      width 320px
+      margin-right 15px
+
+    > .nav
+      overflow hidden
 
 #dropmenu .w-mask
   z-index 10
 
 #dropmenu-subsite
-  & nav
+  nav
     display none
     position absolute
     z-index 11
@@ -1046,37 +1075,44 @@ html.account #header
     padding 0 10px 25px
     color #333
     background #FCFCFA
-    & h2
+    h2
       margin 10px 0
       font-weight bold
       font-size .8em
-    & ul
+    ul
       border 1px #C0C0C0 solid
       border-radius 6px
       background #fff
-    & li
-      display flex
-    & li a
-      flex 1
-      display block
-      padding .5em 0
-      border-right 1px #C0C0C0 solid
+    li
+      // display flex
       border-bottom 1px #C0C0C0 solid
+      font-size 0
+    li a
+      // flex 1
+      // display block
+      display table-cell
+      box-sizing border-box
+      padding .5em 0
+      width 25%
+      height 100%
+      border-right 1px #C0C0C0 solid
       text-align center
-    & li a:last-child
+      font-size 15px
+      vertical-align middle
+    li a:last-child
       border-right 0
-    & li:last-child a
+    li:last-child
       border-bottom 0
-    & li a em
+    li a em
       color blue
-    & header
+    header
       margin 0 -10px
       padding 0 10px
       height 44px
       line-height 44px
       overflow hidden
       background red
-    & header a
+    header a
       display inline-block
       margin-right 5px
       padding 0 5px
@@ -1085,10 +1121,10 @@ html.account #header
       color #fff
       font-size .66em
       background yellow
-    & header span
+    header span
       font-size .88em
       color #fff
-  & .w-mask
+  .w-mask
     // display block
     z-index 10
 
@@ -1149,7 +1185,7 @@ html.account #header
     background-size contain
   &.gopc:before
     background-image url(../img/icon-gopc.png)
-  & span
+  span
     vertical-align middle
   &.gotop
     width 26%
@@ -1195,77 +1231,80 @@ html.account #header
 
 /** Main **/
 .pagenav li
-  display flex
+  // display flex
   border-top 1px #D97975 solid
   background-color #D00
+  white-space nowrap
+  font-size 0
   &:first-child
     margin-top -1px
-    border none
-  & a
-    flex 1
-    // width 20% // for 操蛋的猎犳
+    border 0
+  a
+    // flex 1
+    box-sizing border-box
+    display inline-block
+    width 25%
     height 28px
     line-height 28px
     overflow hidden
-    // box-sizing border-box
     border-left 1px #D97975 solid
-    // margin-left -1px
     text-align center
-    font-size .95em
+    font-size .95rem
     color #fff
-  & a:first-child
-    border none
-  & a.more:after
+  a:first-child
+    border 0
+  a.more:after
     content ''
     arrow top 4px #fff
     margin-left 4px
     vertical-align -1px
-  & a.more.fold:after
+  a.more.fold:after
     arrow bottom 4px #fff
     vertical-align 2px
 
 .w-cnt-news
-  & h2.title
+  h2.title
     display inline-block
     margin 1rem 0 0
     // padding .1em .4em
-    padding 0 .4rem
-    font-size .88rem
+    padding 3px .4rem 2px // 在手机中文字不垂直居中
+    line-height 1
+    font-size 14px
     color #fff
     background-color #d00
-  & h3.title
+  h3.title
     margin .5rem 0
     color blue
     text-align right
-  & .w-search
+  .w-search
     margin 0 0 1rem
 
 /* 注册页 */
 .form-login
   margin-bottom 5rem
-  & .forget-password
+  .forget-password
     margin-top 10px
     text-align right
-    & a
+    a
       color blue
-  & .reg-now
+  .reg-now
     margin-top 2rem
     text-align center
     color #999
     font-size .95rem
-    & a
+    a
       color green
 
 /* 注册页 */
 .cnt-404
   margin 5rem 10px
-  & p
+  p
     margin 1.5rem 0
     text-align center
-    & strong
+    strong
       font-size .9rem
       color red
-    & a
+    a
       font-size .95rem
       color blue
       text-decoration underline
@@ -1274,7 +1313,7 @@ html.account #header
 .cnt-center
   margin-bottom 2rem
   border-top 1px #CCC solid
-  & .mycomment
+  .mycomment
     position relative
     display block
     margin-bottom 4rem
@@ -1293,9 +1332,9 @@ html.account #header
       margin-top -4px
       content ''
       arrow left 4px blue
-  & .comment-list
+  .comment-list
     padding 0 10px
-    & .comment-title
+    .comment-title
       margin-top 10px
       font-size .9rem
       color blue
@@ -1304,7 +1343,7 @@ html.account #header
         arrow top 4px blue
         margin-left 5px
         vertical-align -1px
-    & .w-art
+    .w-art
       margin 0
 
 /* 文章页 */
@@ -1312,19 +1351,17 @@ html.account #header
   .news-content
     margin 15px 0
     padding 0 10px
-    & h1
+    h1
       font-weight bold
       font-size 1.25rem
       line-height 1.3
       color #000
-    & .from
+    .from
       position relative
       margin-top 10px
       font-size .75rem
       color #666
-      & time
-        margin-left 1.2em
-      & .setfont
+      .setfont
         position absolute
         right 0
         width 30px
@@ -1332,60 +1369,66 @@ html.account #header
         border-radius 1px
         text-align center
         color blue
-    & article
-      & p
+    article
+      p
         margin 1rem 0
         color #111
         // font-weight bold
-      & .art-pic
-        margin 1rem 0
-        text-align center
-        & .pic
+        img
           display block
-          max-height 600px
+          max-width 100%
+          height auto
+          margin .5em auto
+      .art-pic
+        margin .5rem 0
+        text-align center
+        .pic
+          display block
+          max-width 100%
+          height auto
           overflow hidden
-        & .des
+        .des
           margin 5px 0 0
-  & .news-related .from
+  .news-related .from
     margin 1rem 0
     text-align right
     font-size .68rem
     color #666
-    & span
+    span
       margin-left 1rem
-  & .news-comment
+  .news-comment
     margin 20px 0
     padding 0 10px
-    & > h3
+    > h3
       margin 10px 0
       font-size .9rem
       font-weight bold
       color #000
-    & .comment-reply
+    .comment-reply
       display flex
       // display box
-      & .avatar
+      .avatar
         display block
         margin-right 5px
         width 50px
         overflow hidden
         text-align center
-        & img
+        img
           width 100%
           height 50px
-        & span
+        span
           display block
           height 18px
           line-height 18px
           overflow hidden
           font-size .68rem
           color blue
-      & .tarea
+      .tarea
         display flex
         // display box
         flex 1
         position relative
-        & textarea
+        textarea
           flex 1
           display block
           box-flex 1
@@ -1396,7 +1439,7 @@ html.account #header
           font-size .8em
           color #444
           background-color #F8F8F8
-        & .tips
+        .tips
           position absolute
           left 10%
           right 10%
@@ -1408,21 +1451,21 @@ html.account #header
           text-align center
           font-size .88rem
           background #EBC2C2
-    & .comment-bar
+    .comment-bar
       margin 10px 0
       padding-bottom 3px
       border-bottom 1px #DEDEDE solid
       text-align right
-      & label
+      label
         font-size .8rem
         color #444
         vertical-align middle
-        & input
+        input
           width 10px
           height 10px
           border 1px #8E8F8F solid
           vertical-align 1px
-      & button
+      button
         margin-left 10px
         padding 0 8px
         height 22px
@@ -1433,60 +1476,61 @@ html.account #header
         text-align center
         font-size .8rem
         background red
-    & .comment-hot
-      & > h3
+    .comment-hot
+      > h3
         margin 10px 0 15px
         border-left 2px red solid
         padding-left 5px
         line-height 1
         font-size .9rem
-      & .comment-list li
+      .comment-list li
         display flex
         padding-bottom 10px
         margin-bottom 20px
         border-bottom 1px #DEDEDE solid
         &:last-child
           border none
-        & .avatar
+        .avatar
           display block
           margin-right 10px
           width 40px
           overflow hidden
-          & img
+          img
             width 100%
             height 40px
-        & .cnt
+        .cnt
           flex 1
-          & > h4
+          > h4
             display flex
             font-size .68rem
-            & a
+            a
               flex 1
               color blue
-            & time
+            time
               flex 1
               text-align right
               color #666
-          & > p
+          > p
             margin-top 2px
             font-size .8rem
-  & .pagenav-ft
+  .pagenav-ft
     margin-top 2rem
     padding 0 10px
-    & h3
+    h3
       font-size .88rem
-    & li
+    li
       border-color #CDCDCD
-    & li:first-child
+    li:first-child
       margin-top 0
       border-top 1px solid #CDCDCD
-    & a
+    a
       color blue
+      font-size 14px
       border-color #CDCDCD
       background-color #F3F3F3
-    & a.more:after
+    a.more:after
       border-top-color blue
-    & a.more.fold:after
+    a.more.fold:after
       border-bottom-color blue
 
 /** 子站配色 **/
@@ -1497,11 +1541,11 @@ html.iot
   .pagenav li
     border-color #034DAD
     background #0459B8
-    & a
+    a
       border-color #034DAD
   .w-box-hd
     border-color #034DAD
-    & .title
+    .title
       color #0459B8
 
 /* 新能源汽车 */
@@ -1511,11 +1555,11 @@ html.nev
   .pagenav li
     border-color #0E61AB
     background #1170BB
-    & a
+    a
       border-color #0E61AB
   .w-box-hd
     border-color #0E61AB
-    & .title
+    .title
       color #1170BB
 
 /* 锂电网 */
@@ -1525,11 +1569,11 @@ html.libattery
   .pagenav li
     border-color #ED242F
     background #E20000
-    & a
+    a
       border-color #ED242F
   .w-box-hd
     border-color #ED242F
-    & .title
+    .title
       color #E20000
 
 /* 节能环保 */
@@ -1539,11 +1583,11 @@ html.ecep
   .pagenav li
     border-color #2B862D
     background #34A637
-    & a
+    a
       border-color #2B862D
   .w-box-hd
     border-color #2B862D
-    & .title
+    .title
       color #34A637
 
 /* 可穿戴设备 */
@@ -1553,11 +1597,11 @@ html.wearable
   .pagenav li
     border-color #E15500
     background #F15C00
-    & a
+    a
       border-color #E15500
   .w-box-hd
     border-color #E15500
-    & .title
+    .title
       color #F15C00
 
 /* 智能家居 */
@@ -1567,11 +1611,11 @@ html.smarthome
   .pagenav li
     border-color #018FA9
     background #019BB5
-    & a
+    a
       border-color #018FA9
   .w-box-hd
     border-color #018FA9
-    & .title
+    .title
       color #019BB5
 
 /* 机器人 */
@@ -1581,37 +1625,51 @@ html.robot
   .pagenav li
     border-color #0A5869
     background #0A6375
-    & a
+    a
       border-color #0A5869
   .w-box-hd
     border-color #0A5869
-    & .title
+    .title
       color #0A6375
 
 /* 电子工程 */
 html.ee
-  & #header
+  #header
     border-color #0F4784
-  & .pagenav li
+  .pagenav li
     border-color #0F4784
     background #07237A
-    & a
+    a
       border-color #0F4784
-  & .w-box-hd
+  .w-box-hd
     border-color #0F4784
-    & .title
+    .title
       color #07237A
 
 /* 3D打印 */
 html.threedprint
-  & #header
+  #header
     border-color #A82B2B
-  & .pagenav li
+  .pagenav li
     border-color #A82B2B
     background #C60000
-    & a
+    a
       border-color #A82B2B
-  & .w-box-hd
+  .w-box-hd
     border-color #A82B2B
-    & .title
+    .title
       color #C60000
+
+/* 医疗科技 */
+html.medtech
+  #header
+    border-color #00ACEE
+  .pagenav li
+    border-color #00ACEE
+    background #0895D3
+    a
+      border-color #00ACEE
+  .w-box-hd
+    border-color #00ACEE
+    .title
+      color #0895D3

@@ -63,7 +63,7 @@ include 'header.html';
       </ul>
 
       <h3 class="title"><a href="#">新闻中心</a></h3>
-      <form action="#" method="post" class="w-search">
+      <form action="#" class="w-search js-search">
         <input type="text" name="q" />
         <button type="submit">搜索</button>
       </form>

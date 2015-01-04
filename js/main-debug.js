@@ -8,14 +8,10 @@
 
 // Main
 (function($) {
-  // Helpers
-  var isIE6 = !!window.ActiveXObject && !window.XMLHttpRequest;
-
   jQuery.noConflict();
 
-  function log(msg) {
-    window.console && console.log(msg);
-  }
+  // Helpers
+  var isIE6 = !!window.ActiveXObject && !window.XMLHttpRequest;
 
   function isString(val) {
     return Object.prototype.toString.call(val) === '[object String]';
@@ -40,11 +36,9 @@
 
     // use fastclick
     // FastClick.attach(document.body);
-    if (typeof FastClick !== 'undefined') {
-      // Don't attach to body if undefined
-      if (typeof document.body !== 'undefined') {
-        FastClick.attach(document.body);
-      }
+    // Don't attach to body if undefined
+    if (window.FastClick && document.body) {
+      FastClick.attach(document.body);
     }
 
     // 多行文字省略号
@@ -53,10 +47,11 @@
     });
 
     // 导航下拉菜单
-    $header.on('tap', '.sitenav .dropmenu-trigger', function(event) {
+    $header.on('click fastclick', '.sitenav > .dropmenu-trigger', function(event) {
       var $ths = $(this);
       var $mask = $dropmenu.find('.w-mask');
       var $nav = $dropmenu.find('nav');
+      // console.log('test');
 
       if ($ths.hasClass('on')) {
         $mask.fadeOut(100);
@@ -71,21 +66,43 @@
         $ths.addClass('on');
       }
 
+      // 操！用 tap 会点透，用 fastclick 不能用 trigger 触发点击事件
+      // 可以定义一个事件来触发
       return false;
     });
 
     $dropmenu.on('touchmove', function() {
-      var $trigger = $header.find('.sitenav .dropmenu-trigger');
-      if ($trigger.hasClass('on')) {
-        $trigger.trigger('tap');
-      }
-    }).on('tap', '.w-mask', function(event) {
+      // 先暂时去年滑动隐藏功能，避免弹层太高需要滑动来查看
+      // var $trigger = $header.find('.sitenav > .dropmenu-trigger');
+      // if ($trigger.hasClass('on')) {
+      //   $trigger.trigger('fastclick');
+      // }
+    })
+    .on('click', '.w-mask', function(event) {
       event.preventDefault();
-      $header.find('.sitenav .dropmenu-trigger').trigger('tap');
+      $header.find('.sitenav > .dropmenu-trigger').trigger('fastclick');
+    });
+
+    // 处理搜索词
+    $('.js-search').on('submit', function() {
+      var $kw = $(this).find('input[name=q]');
+      var val = $.trim($kw.val());
+
+      if (!val) {
+        // $kw.attr('placeholder', '请输入你要搜索的关键词');
+        return false;
+      }
+
+      window.location = '/search/' + $kw.val() + '.html';
+      return false;
+
+      // var $this = $(this);
+      // var qval = $this.find('input[name=q]').val();
+      // $this.find('input[name=url]').val('search/' + qval + '.html');
     });
 
     // 子站导航下拉菜单
-    $header.on('tap', '.logo .dropmenu-trigger', function(event) {
+    $header.on('click fastclick', '.logo > .dropmenu-trigger', function(event) {
       var $ths = $(this);
       var $mask = $dropmenuSubsite.find('.w-mask');
       var $nav = $dropmenuSubsite.find('nav');
@@ -104,19 +121,27 @@
     });
 
     $dropmenuSubsite.on('touchmove', function() {
-      var $trigger = $header.find('.logo .dropmenu-trigger');
+      var $trigger = $header.find('.logo > .dropmenu-trigger');
       if ($trigger.hasClass('on')) {
-        $trigger.trigger('tap');
+        $trigger.trigger('fastclick');
       }
-    }).on('tap', '.w-mask, .cancel', function(event) {
+    }).on('click', '.w-mask, .cancel', function(event) {
       event.preventDefault();
-      $header.find('.logo .dropmenu-trigger').trigger('tap');
+      $header.find('.logo > .dropmenu-trigger').trigger('fastclick');
     });
 
     // 显示全部文章
-    $('#js-art').on('tap', '.w-viewmore', function(event) {
+    $('#js-art').on('click', '.w-viewmore', function(event) {
       event.preventDefault();
-      $(this).hide().siblings('.js-hide').removeClass('js-hide');
+
+      var $this = $(this);
+      var url = $this.data('url');
+
+      // $(this).hide().siblings('.js-hide').removeClass('js-hide');
+      $.get(url, function(html) {
+        // html = '<p>OK</p>';
+        $this.before(html).hide();
+      });
     });
 
     // 页内导航更多按钮
@@ -157,7 +182,7 @@
     // });
 
     // 设置文章字体大小
-    $('#js-setfont').on('tap', function(event) {
+    $('#js-setfont').on('click', function(event) {
       event.preventDefault();
       var $ths = $(this);
       var $art = $('#js-art');
@@ -206,7 +231,7 @@
     });
 
     // 发送评论
-    $commentBar.on('tap click', 'button', function(event) {
+    $commentBar.on('click', 'button', function(event) {
       event.preventDefault();
       var $ths = $(this);
       var $tips = $commentReply.find('.tips');
@@ -241,7 +266,7 @@
             }, 5000);
           });
         }
-      })
+      });
     });
 
     // 加载更多
@@ -249,12 +274,15 @@
       load: function(dir, type) {
         var me = this;
         var $me = me.$el;
-        var url = $me.find('.w-viewmore').data('url');
+        var $viewmore = $me.find('.w-viewmore');
+        var url = $viewmore.data('url');
+        var page = $viewmore.data('page') || 1;
 
-        $.getJSON(url, function(data) {
-         var html, $list = $me.find('.refresh-data');
-         if (data.length) {
-            var html = (function(data) { // 数据渲染
+        $.getJSON(url, {pagenum: page}, function(data) {
+          var html, $list = $me.find('.refresh-data');
+          // console.log(data);
+          if (data.length) {
+            html = (function(data) { // 数据渲染
               var liArr = [];
               $.each(data, function() {
                 liArr.push(this.html);
@@ -262,8 +290,10 @@
               return liArr.join('');
             })(data);
 
-            $list[dir == 'up' ? 'prepend' : 'append'](html);
+            $list[dir === 'up' ? 'prepend' : 'append'](html);
             me.afterDataLoading(); // 数据加载完成后改变状态
+
+            $viewmore.data('page', ++page);
           } else {
             me.disable(dir); // 没有数据就不再加载，并且显示没有更多内容
             // dir == 'up' && ++countUp > 1 && me.disable(dir); // 加载两次后不再加载，并且显示没有更多内容
@@ -280,7 +310,7 @@
     // });
 
     // 返回顶部
-    $gotop.on('tap click', function(event) {
+    $gotop.on('click', function(event) {
       window.scrollTo(0, 0);
       return false;
       // $('html, body').scrollTop(0);
