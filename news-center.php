@@ -10,15 +10,13 @@ include 'header.html';
 ?>
   <div id="main">
     <nav class="pagenav">
-      <ul>
-        <li>
-          <a href="#">国内</a>
-          <a href="#">国际</a>
-          <a href="#">财经</a>
-          <a href="#">企业</a>
-          <a href="#">新品</a>
-        </li>
-      </ul>
+      <div class="nav-list">
+        <a href="#">国内</a>
+        <a href="#">国际</a>
+        <a href="#">财经</a>
+        <a href="#">企业</a>
+        <a href="#">新品</a>
+      </div>
     </nav>
 
     <div class="ad mxh70"><a href="#"><img src="http://m.hao123.com/static/img/banner/hsy725.jpg" alt="ad" /></a></div>

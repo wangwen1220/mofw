@@ -403,7 +403,7 @@ a:hover
     margin-left 4px
     vertical-align -1px
   &.loading:after
-    content none
+    content normal
   &.mod2
     border 1px solid #d6d6d6
     border-radius 1px
@@ -471,18 +471,23 @@ a:hover
     font-size .75rem
     color #999
     vertical-align bottom
-    time
-      margin-left 1.5rem
+    > a
+      margin-right 1em
 
 // 横屏
 @media only screen and (min-width 321px) and (orientation landscape)
   .w-art-wrap
-    display flex
-    flex-wrap wrap
-    justify-content space-between
+    // display flex
+    // flex-wrap wrap
+    // justify-content space-between
+    clearfix()
 
     .w-art
+      float left
       width 49%
+
+      &:nth-child(even)
+        float right
 
 /*
 @name w-headline
@@ -820,11 +825,13 @@ html.account #header
   > span
     display inline-block
     margin-left 4px
-    font-size 18px
+    margin-bottom -1px
+    // margin-top -2px
+    font-size 19px
     font-weight bold
     color red
     line-height 1
-    margin-bottom -3px
+    text-shadow 1px 1px 1px rgba(0, 0, 0, .3)
     vertical-align bottom
   > img
     height 100%
@@ -859,6 +866,7 @@ html.account #header
 #header .position
   @extend #header .logo
   a
+  span
     // display inline-block
     font-size .9em
     color blue
@@ -895,16 +903,14 @@ html.account #header
   > a
     display inline-block
     margin -10px -10px -10px 0
-    padding 32px 10px 10px
+    padding 10px
     width 20px
-    height 0
+    height 22px
     overflow hidden
     background-position 50% 50%
     background-repeat no-repeat
     background-size 20px
     vertical-align middle
-    font-size 0
-    // background-color #ccc
 
     &.dropmenu-trigger
       // image '../img/dropmenu-trigger.png'
@@ -923,65 +929,43 @@ html.account #header
   padding 0 10px
   background #fff
 
-  > h2
-    // margin-bottom 5px
-    margin-bottom 4px
-    // padding 13px 0 7px
-    padding 13px 0 3px
-    // border-bottom 1px #DEDEDE solid
-    font-size .95rem
-    // color #AA0202
+  > .nav-box
+    margin 15px 0
 
-  > .chanel
-    margin-bottom 5px
+    > h3
+      padding-bottom 5px
+      border-bottom 1px #ececec solid
+      font-size 1rem
+      font-weight bold
+      color #000
 
-    > li
-      // display flex
-      justify-content space-between
-      // display box
-      // box-pack justify
-      margin 8px 0
-      text-align justify
-      font-size 0
+    > .channel-list
+    > .nav-list
+      margin-top 8px
 
-      &:after
-        content ''
+      li
+        // display flex
+        // justify-content space-between
+        // display box
+        // box-pack justify
+        // margin 8px 0
+        text-align justify
+        font-size 0
+
+        &:after
+          content ''
+          display inline-block
+          width 100%
+          height 0
+          overflow hidden
+
+      a
         display inline-block
-        width 100%
-        height 0
-        overflow hidden
-
-      > a
-        // display block
-        display inline-block
-        width auto
+        margin-bottom 6px
+        // margin-right 1em
         padding 0 8px
-        height 24px
-        line-height 24px
-        overflow hidden
-        border 1px #CCC solid
-        text-align center
-        // font-size 1.1rem
-        font-size 1rem
-        color #666
-
-  > .nav
-    // display flex
-    // flex-wrap wrap
-    // justify-content space-between
-    // align-content flex-start
-    margin-bottom 20px
-    // text-align justify
-    // font-size 0
-    line-height 0
-
-    > a
-      @extend #dropmenu nav > .chanel > li > a
-      // flex none
-      display inline-block
-      width auto
-      margin 4px 0
-      // margin-right .5rem
+        font-size 15px
+        color #000
 
   // 登录框
   .form-login
@@ -1048,71 +1032,40 @@ html.account #header
       text-align right
       vertical-align middle
 
+  .w-mask
+    z-index 10
+
 // 横屏
-@media only screen and (min-width 321px) and (orientation landscape)
-  #dropmenu nav
-    > .chanel
-    > h2:nth-child(2)
-      float left
-      clear right
-      width 320px
-      margin-right 15px
+// @media only screen and (min-width 321px) and (orientation landscape)
+//   #dropmenu nav
+//     > .chanel
+//     > h2:nth-child(2)
+//       float left
+//       clear right
+//       width 320px
+//       margin-right 15px
 
-    > .nav
-      overflow hidden
+//     > .nav
+//       overflow hidden
 
-#dropmenu .w-mask
-  z-index 10
-
-#dropmenu-subsite
-  nav
-    display none
-    position absolute
-    z-index 11
-    left 0
-    right 0
-    margin-top -44px
-    padding 0 10px 25px
-    color #333
-    background #FCFCFA
-    h2
-      margin 10px 0
-      font-weight bold
-      font-size .8em
-    ul
-      border 1px #C0C0C0 solid
-      border-radius 6px
-      background #fff
-    li
-      // display flex
-      border-bottom 1px #C0C0C0 solid
-      font-size 0
-    li a
-      // flex 1
-      // display block
-      display table-cell
-      box-sizing border-box
-      padding .5em 0
-      width 25%
-      height 100%
-      border-right 1px #C0C0C0 solid
-      text-align center
-      font-size 15px
-      vertical-align middle
-    li a:last-child
-      border-right 0
-    li:last-child
-      border-bottom 0
-    li a em
-      color blue
-    header
-      margin 0 -10px
-      padding 0 10px
-      height 44px
-      line-height 44px
-      overflow hidden
-      background red
-    header a
+#dropmenu-subsite nav
+  display none
+  position absolute
+  z-index 11
+  left 0
+  right 0
+  margin-top -44px
+  padding 0 10px 25px
+  color #333
+  background #FCFCFA
+  header
+    margin 0 -10px
+    padding 0 10px
+    height 44px
+    line-height 44px
+    overflow hidden
+    background red
+    a
       display inline-block
       margin-right 5px
       padding 0 5px
@@ -1121,12 +1074,47 @@ html.account #header
       color #fff
       font-size .66em
       background yellow
-    header span
+    span
       font-size .88em
       color #fff
-  .w-mask
-    // display block
-    z-index 10
+  h2
+    margin 10px 0
+    font-weight bold
+    font-size .8em
+    > a
+      float right
+      font-weight normal
+      color blue
+      padding-left 18px
+      background url(../img/icon-gohome.png) 0 2px no-repeat
+      background-size 14px
+  ul
+    border 1px #C0C0C0 solid
+    border-radius 6px
+    background #fff
+  li
+    border-bottom 1px #C0C0C0 solid
+    clearfix()
+    a
+      float left
+      box-sizing border-box
+      width 25%
+      height 30px
+      line-height 30px
+      overflow hidden
+      border-right 1px #C0C0C0 solid
+      white-space nowrap
+      text-align center
+      font-size 14px
+      vertical-align middle
+      em
+        color blue
+      &:last-child
+        border-right 0
+    &:last-child
+      border-bottom 0
+.w-mask
+  z-index 10
 
 /** Footer **/
 #footer
@@ -1230,37 +1218,48 @@ html.account #header
 //   background-size 6px auto
 
 /** Main **/
-.pagenav li
-  // display flex
-  border-top 1px #D97975 solid
-  background-color #D00
-  white-space nowrap
-  font-size 0
-  &:first-child
-    margin-top -1px
-    border 0
+.pagenav .nav-list
+  background #D00
+  // font-size 0
+  clearfix()
   a
-    // flex 1
+    float left
     box-sizing border-box
-    display inline-block
     width 25%
     height 28px
     line-height 28px
     overflow hidden
-    border-left 1px #D97975 solid
+    border 0 solid #D97975
+    border-right-width 1px
+    white-space nowrap
     text-align center
     font-size .95rem
     color #fff
-  a:first-child
-    border 0
-  a.more:after
-    content ''
-    arrow top 4px #fff
-    margin-left 4px
-    vertical-align -1px
-  a.more.fold:after
-    arrow bottom 4px #fff
-    vertical-align 2px
+    &:nth-child(4n)
+      border-right-width 0
+    &:nth-child(4) ~ a
+      border-top-width 1px
+    &:nth-child(11) ~ a:not(.more)
+      display none
+    &.on
+      color #d00
+      background #fff
+    &.more:after
+      content ''
+      arrow top 4px #fff
+      margin-left 4px
+      vertical-align -1px
+    &.more.fold:after
+      arrow bottom 4px #fff
+      vertical-align 2px
+
+html.app-list .pagenav .nav-list a
+html.news-center .pagenav .nav-list a
+  width 20%
+  border-top 0
+  border-right-width 1px
+  &:last-child
+    border-right 0
 
 .w-cnt-news
   h2.title
@@ -1370,15 +1369,16 @@ html.account #header
         text-align center
         color blue
     article
+      word-wrap break-word
       p
         margin 1rem 0
         color #111
         // font-weight bold
-        img
-          display block
-          max-width 100%
-          height auto
-          margin .5em auto
+      img
+        display block
+        max-width 100%
+        height auto
+        margin .5em auto
       .art-pic
         margin .5rem 0
         text-align center
@@ -1488,6 +1488,7 @@ html.account #header
         padding-bottom 10px
         margin-bottom 20px
         border-bottom 1px #DEDEDE solid
+        word-wrap break-word
         &:last-child
           border none
         .avatar
@@ -1517,29 +1518,26 @@ html.account #header
     margin-top 2rem
     padding 0 10px
     h3
+      margin-bottom 3px
       font-size .88rem
-    li
-      border-color #CDCDCD
-    li:first-child
-      margin-top 0
-      border-top 1px solid #CDCDCD
-    a
+    .nav-list a
       color blue
       font-size 14px
-      border-color #CDCDCD
-      background-color #F3F3F3
-    a.more:after
-      border-top-color blue
-    a.more.fold:after
-      border-bottom-color blue
+      border-color #CDCDCD !important
+      border-top-width 1px
+      background #F3F3F3
+      &.more:after
+        border-top-color blue
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color blue
 
 /** 子站配色 **/
 /* 物联网 */
 html.iot
   #header
     border-color #034DAD
-  .pagenav li
-    border-color #034DAD
+  .pagenav .nav-list
     background #0459B8
     a
       border-color #034DAD
@@ -1552,8 +1550,7 @@ html.iot
 html.nev
   #header
     border-color #0E61AB
-  .pagenav li
-    border-color #0E61AB
+  .pagenav .nav-list
     background #1170BB
     a
       border-color #0E61AB
@@ -1566,8 +1563,7 @@ html.nev
 html.libattery
   #header
     border-color #ED242F
-  .pagenav li
-    border-color #ED242F
+  .pagenav .nav-list
     background #E20000
     a
       border-color #ED242F
@@ -1580,8 +1576,7 @@ html.libattery
 html.ecep
   #header
     border-color #2B862D
-  .pagenav li
-    border-color #2B862D
+  .pagenav .nav-list
     background #34A637
     a
       border-color #2B862D
@@ -1594,8 +1589,7 @@ html.ecep
 html.wearable
   #header
     border-color #E15500
-  .pagenav li
-    border-color #E15500
+  .pagenav .nav-list
     background #F15C00
     a
       border-color #E15500
@@ -1608,8 +1602,7 @@ html.wearable
 html.smarthome
   #header
     border-color #018FA9
-  .pagenav li
-    border-color #018FA9
+  .pagenav .nav-list
     background #019BB5
     a
       border-color #018FA9
@@ -1622,8 +1615,7 @@ html.smarthome
 html.robot
   #header
     border-color #0A5869
-  .pagenav li
-    border-color #0A5869
+  .pagenav .nav-list
     background #0A6375
     a
       border-color #0A5869
@@ -1636,8 +1628,7 @@ html.robot
 html.ee
   #header
     border-color #0F4784
-  .pagenav li
-    border-color #0F4784
+  .pagenav .nav-list
     background #07237A
     a
       border-color #0F4784
@@ -1649,14 +1640,13 @@ html.ee
 /* 3D打印 */
 html.threedprint
   #header
-    border-color #A82B2B
-  .pagenav li
-    border-color #A82B2B
+    border-color #D97975
+  .pagenav .nav-list
     background #C60000
     a
-      border-color #A82B2B
+      border-color #D97975
   .w-box-hd
-    border-color #A82B2B
+    border-color #D97975
     .title
       color #C60000
 
@@ -1664,8 +1654,7 @@ html.threedprint
 html.medtech
   #header
     border-color #00ACEE
-  .pagenav li
-    border-color #00ACEE
+  .pagenav .nav-list
     background #0895D3
     a
       border-color #00ACEE

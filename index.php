@@ -11,14 +11,32 @@ include 'header.html';
 
   <div id="main">
     <nav class="pagenav">
-      <ul>
-        <li><a href="#">首页</a> <a href="#">半导体照明</a> <a href="#">激光</a> <a href="#">照明</a></li>
-        <li><a href="#">电子工程</a> <a href="#">首页</a> <a href="#">新品</a> <a href="#">市场</a></li>
-        <li class="js-hide hidden"><a href="#">电子工程</a> <a href="#">首页</a> <a href="#">新品</a> <a href="#">市场</a></li>
-        <li class="js-hide hidden"><a href="#">电子工程</a> <a href="#">首页</a> <a href="#">新品</a> <a href="#">市场</a></li>
-        <li class="js-hide hidden"><a href="#">电子工程</a> <a href="#">首页</a> <a href="#">新品</a> <a href="#">市场</a></li>
-        <li><a href="#">技术</a> <a href="#">视频</a> <a href="#">视网频</a> <a class="more">更多</a></li>
-      </ul>
+      <div class="nav-list">
+        <a href="#">首页</a>
+        <a href="#">半导体照明</a>
+        <a href="#">激光</a>
+        <a href="#">照明</a>
+        <a href="#">电子工程</a>
+        <a href="#">首页</a>
+        <a href="#">新品</a>
+        <a href="#">市场</a>
+        <a href="#">电子工程</a>
+        <a href="#">首页</a>
+        <a href="#">新品</a>
+        <a href="#">市场</a>
+        <a href="#">电子工程</a>
+        <a href="#">首页</a>
+        <a href="#">新品</a>
+        <a href="#">市场</a>
+        <a href="#">电子工程</a>
+        <a href="#">首页</a>
+        <a href="#">新品</a>
+        <a href="#">市场</a>
+        <a href="#">技术</a>
+        <a href="#">视频</a>
+        <a href="#">视网频</a>
+        <a class="more">更多</a>
+      </div>
     </nav>
 
     <ul id="slider" class="fn-hide">
@@ -125,6 +143,18 @@ include 'header.html';
         <div class="w-art-wrap">
           <div class="w-art">
             <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="75" height="75" /></a>
+            <div class="txt">
+              <h3><a href="#">男子在西安一交警队院内坠亡中国空军跟踪监视两次企图抵近，元芳同学这张图你怎么看，毕业季8招让你的简历脱颖而出</a></h3>
+            </div>
+          </div>
+          <div class="w-art">
+            <a href="#" class="pic"><img src="http://img1.cache.netease.com/3g/2014/8/7/20140807145747e43ce.jpg" alt="" width="75" height="75" /></a>
+            <div class="txt">
+              <h3><a href="#">男子在西安一交警队院内坠亡中国空军跟踪监视两次企图抵近，元芳同学这张图你怎么看，毕业季8招让你的简历脱颖而出</a></h3>
+            </div>
+          </div>
+          <div class="w-art">
+            <a href="#" class="pic"><img src="http://img1.cache.netease.com/3g/2014/8/7/20140807145747e43ce.jpg" alt="" width="75" height="75" /></a>
             <div class="txt">
               <h3><a href="#">男子在西安一交警队院内坠亡中国空军跟踪监视两次企图抵近，元芳同学这张图你怎么看，毕业季8招让你的简历脱颖而出</a></h3>
             </div>

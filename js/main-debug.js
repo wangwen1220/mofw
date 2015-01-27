@@ -22,6 +22,41 @@
     return isString(id) ? document.getElementById(id) : id;
   }
 
+  // 检测元素是否进入视口
+  function getViewportSize(w) {
+    w = w || window;
+    var d = w.document;
+
+    if (w.innerWidth !== null) return {
+      w: w.innerWidth,
+      h: w.innerHeight
+    };
+
+    if (document.compatMode === 'CSS1Compat') {
+      return {
+        w: d.documentElement.clientWidth,
+        h: d.documentElement.clientHeight
+      };
+    }
+
+    return {
+      w: d.body.clientWidth,
+      h: d.body.clientWidth
+    };
+  }
+
+  function isViewportVisible(el) {
+    var box = el.getBoundingClientRect();
+    var height = box.height || (box.bottom - box.top);
+    var width = box.width || (box.right - box.left);
+    var viewport = getViewportSize();
+
+    if (!height || !width) return false;
+    if (box.top > viewport.h || box.bottom < 0) return false;
+    if (box.right < 0 || box.left > viewport.w) return false;
+    return true;
+  }
+
   // 文档加载完执行
   $(function() {
     // 通用变量
@@ -93,7 +128,9 @@
         return false;
       }
 
-      window.location = '/search/' + $kw.val() + '.html';
+      // 后台说要编码两次，那边才能解析
+      window.location = '/search/' + encodeURIComponent(encodeURIComponent($kw.val())) + '.html';
+      // window.location = '/search/' + encodeURIComponent($kw.val()) + '.html';
       return false;
 
       // var $this = $(this);
@@ -121,10 +158,11 @@
     });
 
     $dropmenuSubsite.on('touchmove', function() {
-      var $trigger = $header.find('.logo > .dropmenu-trigger');
-      if ($trigger.hasClass('on')) {
-        $trigger.trigger('fastclick');
-      }
+      // 先暂时去年滑动隐藏功能，避免弹层太高需要滑动来查看
+      // var $trigger = $header.find('.logo > .dropmenu-trigger');
+      // if ($trigger.hasClass('on')) {
+      //   $trigger.trigger('fastclick');
+      // }
     }).on('click', '.w-mask, .cancel', function(event) {
       event.preventDefault();
       $header.find('.logo > .dropmenu-trigger').trigger('fastclick');
@@ -145,20 +183,23 @@
     });
 
     // 页内导航更多按钮
-    $main.on('click', '.pagenav .more', function(event) {
-      event.preventDefault();
+    $main.on('click', '.pagenav .more', function() {
       var $ths = $(this);
-      var $hideNav = $ths.parent().siblings('.hidden');
+      var $foldnavs = $ths.siblings('a').slice(11);
+      // var $foldnavs = $ths.siblings('.hidden');
 
-      if (!$ths.hasClass('fold')) {
-        $hideNav.removeClass('js-hide');
-        $ths.text('收起').addClass('fold');
-      } else {
-        $hideNav.addClass('js-hide');
+      if ($ths.hasClass('fold')) {
+        // $foldnavs.addClass('js-hide');
+        $foldnavs.hide();
         $ths.text('更多').removeClass('fold');
+      } else {
+        // $foldnavs.removeClass('js-hide');
+        $foldnavs.show();
+        $ths.text('收起').addClass('fold');
       }
+
       return false;
-    });
+    });//.find('.pagenav .more').trigger('click');
 
     // 创建 slider 组件
     $('#slider').slider({
@@ -297,6 +338,40 @@
           } else {
             me.disable(dir); // 没有数据就不再加载，并且显示没有更多内容
             // dir == 'up' && ++countUp > 1 && me.disable(dir); // 加载两次后不再加载，并且显示没有更多内容
+          }
+        });
+      }
+    });
+
+    // 下拉加载
+    $(window).on('DOMContentLoaded load resize scroll', function() {
+      var $ajaxload = $('#js-ajaxload');
+      var $list = $ajaxload.prev();
+      var url = $ajaxload.data('url');
+      var page = $ajaxload.data('page') || 1;
+      var loading = $ajaxload.data('loading') || false;
+      var html;
+
+      // 进入视口且不在加载中
+      if (isViewportVisible($ajaxload[0]) && !loading) {
+        // console.log('进入视口');
+        $ajaxload.data('loading', true);
+
+        $.getJSON(url, {pagenum: page}, function(data) {
+          // console.log(data);
+          if (data.length) {
+            html = (function(data) {
+              var liArr = [];
+              $.each(data, function() {
+                liArr.push(this.html);
+              });
+              return liArr.join('');
+            })(data);
+
+            $list.append(html);
+            $ajaxload.data('page', ++page).data('loading', false);
+          } else { // 如果没有更多产品
+            $ajaxload.hide();
           }
         });
       }

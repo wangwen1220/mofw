@@ -8,7 +8,7 @@ $description = '新闻列表';
 
 include 'header.html';
 ?>
-  <div id="main" class="ui-refresh">
+  <div id="main">
     <div class="w-cnt refresh-data">
       <div class="w-art w-art-hr">
         <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84" /></a>
@@ -87,7 +87,7 @@ include 'header.html';
         </div>
       </div>
     </div>
-    <a data-url="refresh.php" class="w-viewmore ui-refresh-down">上拉加载更多</a>
+    <a data-url="refresh.php" id="js-ajaxload" class="w-viewmore loading">加载中...</a>
   </div>
 
 <?php include 'footer.html'; ?>
