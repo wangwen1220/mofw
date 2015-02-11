@@ -344,38 +344,43 @@
     });
 
     // 下拉加载
-    $(window).on('DOMContentLoaded load resize scroll', function() {
+    (function() {
       var $ajaxload = $('#js-ajaxload');
       var $list = $ajaxload.prev();
       var url = $ajaxload.data('url');
-      var page = $ajaxload.data('page') || 1;
-      var loading = $ajaxload.data('loading') || false;
-      var html;
 
-      // 进入视口且不在加载中
-      if (isViewportVisible($ajaxload[0]) && !loading) {
-        // console.log('进入视口');
-        $ajaxload.data('loading', true);
+      if (!$ajaxload.length) return;
 
-        $.getJSON(url, {pagenum: page}, function(data) {
-          // console.log(data);
-          if (data.length) {
-            html = (function(data) {
-              var liArr = [];
-              $.each(data, function() {
-                liArr.push(this.html);
-              });
-              return liArr.join('');
-            })(data);
+      $(window).on('DOMContentLoaded load resize scroll', function() {
+        var page = $ajaxload.data('page') || 1;
+        var loading = $ajaxload.data('loading') || false;
+        var html;
 
-            $list.append(html);
-            $ajaxload.data('page', ++page).data('loading', false);
-          } else { // 如果没有更多产品
-            $ajaxload.hide();
-          }
-        });
-      }
-    });
+        // 进入视口且不在加载中
+        if (isViewportVisible($ajaxload[0]) && !loading) {
+          // console.log('进入视口');
+          $ajaxload.data('loading', true);
+
+          $.getJSON(url, {pagenum: page}, function(data) {
+            // console.log(data);
+            if (data.length) {
+              html = (function(data) {
+                var liArr = [];
+                $.each(data, function() {
+                  liArr.push(this.html);
+                });
+                return liArr.join('');
+              })(data);
+
+              $list.append(html);
+              $ajaxload.data('page', ++page).data('loading', false);
+            } else { // 如果没有更多产品
+              $ajaxload.hide();
+            }
+          });
+        }
+      });
+    })();
 
     // 滚到底部
     // $('.ui-refresh').on('swipeUp', function(event) {

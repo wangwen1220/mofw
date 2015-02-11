@@ -447,17 +447,15 @@ a:hover
       overflow hidden
       // display box
       // box-orient vertical
-      // overflow hidden
       // -webkit-line-clamp 2
       // -moz-line-clamp 2
       // line-clamp 2
       // text-overflow ellipsis
       // text-overflow -o-ellipsis-lastline
-      // max-height 48px
-      // color blue-dark
 
       a
         display block
+        color blue-dark
 
 /* 带边框 */
 .w-art-hr
@@ -1139,8 +1137,14 @@ html.account #header
 #footer .copyright
   margin .7em 0 1.5em
   text-align center
-  font-size .88em
+  font-size 1em
   color #666
+
+  > small
+    display block
+    // margin-top 3px
+    font-size 10px
+    transform scale(.95)
 
 #footer .help
   height 35px
@@ -1153,7 +1157,7 @@ html.account #header
   display flex
 
 #footer .help a
-  width 37%
+  width 50%
   height 100%
   display block
   cursor pointer
@@ -1176,7 +1180,6 @@ html.account #header
   span
     vertical-align middle
   &.gotop
-    width 26%
     background-color #FE8900
   &.gotop:before
     content normal
@@ -1531,6 +1534,26 @@ html.news-center .pagenav .nav-list a
       &.more.fold:after
         border-top-color transparent
         border-bottom-color blue
+
+#sharebtn
+  display block
+  border 1px solid #D8D8D8
+  border-radius 1px
+  height 30px
+  line-height 30px
+  font-size 15px
+  text-align center
+  color #575757
+
+  &:after
+    content ''
+    margin-left 12px
+    display inline-block
+    width 45px
+    height 100%
+    background url(../img/icon-sharebtn.png) no-repeat 50% 50%
+    background-size 45px
+    vertical-align top
 
 /** 子站配色 **/
 /* 物联网 */

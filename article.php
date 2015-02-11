@@ -35,6 +35,42 @@ include 'header.html';
       </article>
     </section>
 
+    <section class="w-cnt">
+      <div class="share">
+        <a id="sharebtn">分享</a>
+        <script src="http://openapi.baidu.com/static/07081126/social-api/js/1.0/share.js">
+        </script>
+        <script>
+          var config = {
+            "afterRender": function() {
+            },
+            "client_id": "ZVEpDSsmZ0qxa1gmgDAh1Fje",
+            "theme": "native",
+            "animate": true,
+            // "order": ["qqdenglu","sinaweibo","qqweibo","renren","kaixin","mail","sms"],
+            "order": ["qqdenglu","sinaweibo","qqweibo"],
+            "dom_id": "sharebtn",
+            "content": document.title,
+            "pic_url": "",
+            "url": encodeURIComponent(location.href)
+          };
+          baidu.socShare.init(config);
+        </script>
+      </div>
+      <style>
+        .bdshare_popup_box {
+          display: none !important;
+        }
+        .bdshare_dialog_list {
+          /*margin-top: 15px !important;*/
+          /*margin-left: 15px !important;*/
+        }
+        .bdshare_dialog_list li {
+          /*width: 120px;*/
+        }
+      </style>
+    </section>
+
     <section class="w-cnt w-cnt-news news-related">
       <h2 class="title">今日要闻</h2>
       <ul class="w-list">
