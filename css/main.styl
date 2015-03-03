@@ -436,14 +436,14 @@ a:hover
 
   .pic
     float left
-    margin-right 10px
+    margin 4px 10px 0 0
 
   .txt
     overflow hidden
 
     h3
       max-height 48px
-      color blue-dark
+      color #000
       overflow hidden
       // display box
       // box-orient vertical
@@ -455,22 +455,23 @@ a:hover
 
       a
         display block
-        color blue-dark
 
 /* 带边框 */
 .w-art-hr
   margin 10px 0 0
   padding 0 0 10px
   border-bottom 1px #DEDEDE solid
-  .txt h3
-    color #000
   .txt p
-    margin-top 5px
+    margin-top 1px
     font-size .75rem
     color #999
     vertical-align bottom
     > a
       margin-right 1em
+  .pic img
+    // margin-top 4px
+    width 80px
+    height 60px
 
 // 横屏
 @media only screen and (min-width 321px) and (orientation landscape)
@@ -529,7 +530,7 @@ a:hover
 
   > a
     display block
-    color blue-dark
+    color #000
     overflow ellipsis
 
   > a strong
@@ -1392,13 +1393,29 @@ html.news-center .pagenav .nav-list a
           overflow hidden
         .des
           margin 5px 0 0
-  .news-related .from
-    margin 1rem 0
-    text-align right
-    font-size .68rem
-    color #666
-    span
-      margin-left 1rem
+  .news-related
+    .from
+      margin 1rem 0
+      text-align right
+      font-size .68rem
+      color #666
+      span
+        margin-left 1rem
+    .w-list-item
+      height auto
+      a
+        margin-top 8px
+        margin-bottom 8px
+        max-height 48px
+        line-height 24px
+        white-space normal
+        color #000
+
+  .news-recommed
+    .w-art a
+    .w-list a
+      color #000
+
   .news-comment
     margin 20px 0
     padding 0 10px
@@ -1534,6 +1551,19 @@ html.news-center .pagenav .nav-list a
       &.more.fold:after
         border-top-color transparent
         border-bottom-color blue
+
+// 横屏
+@media only screen and (min-width 321px) and (orientation landscape)
+  .cnt-news
+    .news-related
+      .w-list-item
+        height 40px
+        a
+          margin-top 0
+          margin-bottom 0
+          max-height none
+          line-height inherit
+          white-space nowrap
 
 #sharebtn
   display block
