@@ -27,20 +27,23 @@
   <header id="header">
     <!-- lights -->
     <?php if (preg_match('/\bsubsite lights news-list\b/', $class)) : ?>
-    <h1 class="position"><a href="subsite.php">OFweek半导体照明网</a> <i>&gt;</i> <a href="#">新闻列表</a></h1>
+    <!-- <h1 class="position"><a href="subsite.php">OFweek半导体照明网</a> <i>&gt;</i> <a href="#">新闻列表</a></h1> -->
+    <h1 class="position"><a class="backhome" href="subsite.php">首页</a> <span class="title">新闻列表</span></h1>
     <?php elseif (preg_match('/\bsubsite lights\b/', $class)) : ?>
     <h1 class="logo"><a class="dropmenu-trigger" href="#"><img src="img/logo-global.png" alt="OFweek"><span>半导体照明网</span></a></h1>
 
     <?php elseif (preg_match('/\bnews-center\b/', $class)) : ?>
-    <h1 class="position"><a href="/">OFweek新闻中心</a></h1>
+    <!-- <h1 class="position"><a href="/">OFweek新闻中心</a></h1> -->
+    <h1 class="position"><a class="backhome" href="subsite.php">首页</a> <span class="title">OFweek新闻中心</span></h1>
     <?php elseif (preg_match('/\bnews-list\b/', $class)) : ?>
-    <h1 class="position"><a href="/">OFweek</a> <i>&gt;</i> <span>新闻列表</span></h1>
+    <h1 class="position"><a class="backhome" href="/">首页</a> <span class="title">技术与应用列表测试标题长度</span></h1>
     <?php elseif (preg_match('/\bsearch-result\b/', $class)) : ?>
-    <h1 class="position"><a href="/">OFweek</a> <i>&gt;</i> <span>搜索结果</span></h1>
+    <!-- <h1 class="position"><a href="/">OFweek</a> <i>&gt;</i> <span>搜索结果</span></h1> -->
+    <h1 class="position"><a class="backhome" href="/">首页</a> <span class="title">搜索结果</span></h1>
     <?php elseif (preg_match('/\bapp-list\b/', $class)) : ?>
-    <h1 class="position"><a href="/">OFweek</a> <i>&gt;</i> <span>技术与应用列表</span></h1>
+    <h1 class="position"><a class="backhome" href="/">首页</a> <span class="title">技术与应用列表</span></h1>
     <?php elseif (preg_match('/\barticle\b/', $class)) : ?>
-    <h1 class="position"><a href="/">OFweek</a> <i>&gt;</i> <a href="#">文章</a></h1>
+    <h1 class="position"><a class="backhome" href="/">首页</a> <span class="title">新闻列表</span></h1>
     <?php elseif (preg_match('/\blogin\b/', $class)) : ?>
     <h1 class="logo"><a href="/"><img src="img/logo.png" alt="OFweek手机版"></a> <strong>登录</strong></h1>
     <?php elseif (preg_match('/\bfind-password\b/', $class)) : ?>

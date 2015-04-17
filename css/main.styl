@@ -18,8 +18,8 @@ red = #D40000
 red-light = #CC0
 blue = #1A4991
 blue-dark = #243851
-gray-light = #1F1F1F
-gray-dark = #444
+$lgray = #f1f1f1
+$dgray = #dedede
 yellow = #FE8900
 green = #379A00
 
@@ -32,7 +32,8 @@ green = #379A00
 body
   min-width 320px
   color #000
-  user-select none
+  // user-select none
+  // -webkit-tap-highlight-color rgba(0, 0, 0, 0) !important
   background #fff
 
 html.account body
@@ -120,8 +121,20 @@ a:hover
 .mt0
   margin-top 0 !important
 
+.mt-10
+  margin-top -10px !important
+
+.mt10
+  margin-top 10px !important
+
 .mb0
   margin-bottom 0 !important
+
+.mb-10
+  margin-bottom -10px !important
+
+.mb10
+  margin-bottom 10px !important
 
 .mxh70
   max-height 70px !important
@@ -131,11 +144,34 @@ a:hover
   margin 10px auto
   overflow hidden
   text-align center
-  background #f8f8f8
-  a
-    display block
+  // background #f8f8f8
+
   img
     width 100%
+
+.adtext
+  position relative
+  padding 0 10px
+  height 35px
+  line-height 35px
+  overflow hidden
+  font-size 1.1rem
+  background #f7f7f7
+
+  > a
+    margin-left 10px
+    color red
+
+    &:before
+      arrow left 5px #999
+      content ''
+      position absolute
+      top 50%
+      transform translateY(-50%)
+      margin-left -10px
+      // margin-right 1px
+      // margin-top -4px
+      // vertical-align top
 
 /* Plugin
 ========================================================================== */
@@ -334,6 +370,51 @@ a:hover
   /*-webkit-transform scale(0.5)*/
 
 /*
+@name m-page
+@overview 分页模块
+@require null
+*/
+.m-page
+  margin 1rem 0
+  clearfix()
+  // text-align justify
+  // text-align-last justify
+  // font-size 0
+
+  // &:after
+  //   content ''
+  //   display inline-block
+  //   width 100%
+  //   height 0
+  //   overflow hidden
+  //   vertical-align top
+
+  & > a
+    display block
+    height 34px
+    line-height 34px
+    overflow hidden
+    border 1px #DEDEDE solid
+    color blue
+    font-size 1rem
+    text-align center
+    vertical-align top
+    background #F3F3F3
+
+  & > .prev
+    float left
+    margin-right 9px
+    width 80px
+
+  & > .next
+    float right
+    margin-left 9px
+    width 80px
+
+  & > .disabled
+    color #999
+
+/*
 @name w-cnt
 @overview 通用内容块样式
 @require null
@@ -431,20 +512,23 @@ a:hover
 */
 .w-art
   // margin 10px 0
-  padding 10px 0
+  padding 5px 0 10px
   clearfix()
 
   .pic
     float left
-    margin 4px 10px 0 0
+    margin 5px 10px 0 0
 
   .txt
     overflow hidden
 
     h3
-      max-height 48px
-      color #000
+      max-height 52px
+      line-height 26px
       overflow hidden
+      color #000
+      font-size 18px
+      // font-weight bold
       // display box
       // box-orient vertical
       // -webkit-line-clamp 2
@@ -458,11 +542,12 @@ a:hover
 
 /* 带边框 */
 .w-art-hr
-  margin 10px 0 0
-  padding 0 0 10px
-  border-bottom 1px #DEDEDE solid
+  margin 8px 0 0
+  padding 0 0 12px
+  border-bottom 1px $lgray solid
   .txt p
-    margin-top 1px
+    margin-top 6px
+    margin-bottom -4px
     font-size .75rem
     color #999
     vertical-align bottom
@@ -470,23 +555,23 @@ a:hover
       margin-right 1em
   .pic img
     // margin-top 4px
-    width 80px
-    height 60px
+    width 95px
+    height 71px
 
 // 横屏
-@media only screen and (min-width 321px) and (orientation landscape)
-  .w-art-wrap
-    // display flex
-    // flex-wrap wrap
-    // justify-content space-between
-    clearfix()
+// @media only screen and (min-width 321px) and (orientation landscape)
+//   .w-art-wrap
+//     // display flex
+//     // flex-wrap wrap
+//     // justify-content space-between
+//     clearfix()
 
-    .w-art
-      float left
-      width 49%
+//     .w-art
+//       float left
+//       width 49%
 
-      &:nth-child(even)
-        float right
+//       &:nth-child(even)
+//         float right
 
 /*
 @name w-headline
@@ -522,11 +607,12 @@ a:hover
 @require null
 */
 .w-list-item
-  height 40px
-  line-height 40px
+  height 43px
+  line-height 43px
   overflow hidden
   word-wrap break-word
-  border-bottom 1px #DEDEDE solid
+  border-bottom 1px $lgray solid
+  font-size 18px
 
   > a
     display block
@@ -542,25 +628,25 @@ a:hover
 
 /* headline */
 .w-list.headline .w-list-item
-  font-size 1.1rem
+  // font-size 1.1rem
   text-align center
 
 // 横屏
-@media only screen and (min-width 321px) and (orientation landscape)
-  .w-list
-    clearfix()
-    // display flex
-    // flex-wrap wrap
-    // justify-content space-between
-    &.headline
-      display block
+// @media only screen and (min-width 321px) and (orientation landscape)
+//   .w-list
+//     clearfix()
+//     // display flex
+//     // flex-wrap wrap
+//     // justify-content space-between
+//     &.headline
+//       display block
 
-  .w-list-item
-    float left
-    width 50%
-    // flex 1 50%
-    &:nth-child(odd) > a
-      margin-right 1em
+//   .w-list-item
+//     float left
+//     width 50%
+//     // flex 1 50%
+//     &:nth-child(odd) > a
+//       margin-right 1em
 
 /*
 @name w-search
@@ -804,8 +890,12 @@ a:hover
 /** Header **/
 #header
   position relative
+  // position fixed
+  // top 0
+  // left 0
+  // right 0
   z-index 11
-  padding 10px 0 10px
+  padding 7px 0
   border-bottom 2px red solid
   background #fff
 
@@ -863,14 +953,24 @@ html.account #header
     vertical-align bottom
 
 #header .position
+  position relative
   @extend #header .logo
+
+  // &:before
+  //   content ''
+  //   display inline-block
+  //   height 100%
+  //   vertical-align middle
+
   a
   span
     // display inline-block
     font-size .9em
     color blue
-    vertical-align middle
-  a:first-child:before
+    // vertical-align middle
+    // background #ccc
+
+  a:first-child:not(.backhome):before
     content ''
     display inline-block
     margin-right 8px
@@ -878,8 +978,9 @@ html.account #header
     height 22px
     background url(../img/icon-home.png) 0 50% no-repeat
     background-size 20px
+    // vertical-align middle
     vertical-align bottom
-    // vertical-align -3px
+
   i
     display inline-block
     margin 0 2px
@@ -887,22 +988,50 @@ html.account #header
     text-indent -9999px
     background url(../img/arrow-rt-gray.png) 0 50% no-repeat
     background-size contain
-    vertical-align middle
+    // vertical-align middle
     // color #A1A1A1
     // font-family Serif
     // vertical-align -2px
 
+  > a.backhome
+    font-size 1.2rem
+    color #777
+    // background #ccc
+
+    &:before
+      content ''
+      display inline-block
+      // margin-right 2px
+      // font-family Serif
+      // font-weight bold
+      // font-size 1.4rem
+      width 11px
+      height 100%
+      background url(../img/arrow-lt.png) 0 50% no-repeat
+      background-size auto 17px
+      vertical-align top
+
+  > .title
+    position absolute
+    left 50%
+    // max-width 50%
+    height 100%
+    overflow hidden
+    font-size 1.2rem
+    transform translateX(-50%)
+    // background #ccc
+
 #header .sitenav
   position absolute
   right 10px
-  bottom 10px
+  bottom 7px
   text-align right
   // background #ccc
 
   > a
     display inline-block
-    margin -10px -10px -10px 0
-    padding 10px
+    margin -7px -10px -7px 0
+    padding 7px 10px
     width 20px
     height 22px
     overflow hidden
@@ -1158,7 +1287,8 @@ html.account #header
   display flex
 
 #footer .help a
-  width 50%
+  flex 1
+  width 33.33333333%
   height 100%
   display block
   cursor pointer
@@ -1223,7 +1353,8 @@ html.account #header
 
 /** Main **/
 .pagenav .nav-list
-  background #D00
+  padding 5px 0
+  // background #D00
   // font-size 0
   clearfix()
   a
@@ -1233,48 +1364,59 @@ html.account #header
     height 28px
     line-height 28px
     overflow hidden
-    border 0 solid #D97975
-    border-right-width 1px
+    // border 0 solid #D97975
+    // border-right-width 1px
     white-space nowrap
     text-align center
-    font-size .95rem
-    color #fff
-    &:nth-child(4n)
-      border-right-width 0
-    &:nth-child(4) ~ a
-      border-top-width 1px
+    font-size 17px
+    font-family Helvetica, STHeiti, Droid Sans Fallback
+    color #000
+    -webkit-tap-highlight-color rgba(230, 230, 232, .5)
+    // &:nth-child(4n)
+    //   border-right-width 0
+    // &:nth-child(4) ~ a
+    //   border-top-width 1px
     &:nth-child(11) ~ a:not(.more)
       display none
     &.on
-      color #d00
+      color #d00 !important
+      border-radius 2px 2px 0 0
       background #fff
-    &.more:after
-      content ''
-      arrow top 4px #fff
-      margin-left 4px
-      vertical-align -1px
-    &.more.fold:after
-      arrow bottom 4px #fff
-      vertical-align 2px
+    &.more
+      &:after
+        content ''
+        arrow top 4px #000
+        margin-left 4px
+        margin-right -12px
+        vertical-align -1px
+      &.fold:after
+        arrow bottom 4px #000
+        vertical-align 2px
 
-html.app-list .pagenav .nav-list a
-html.news-center .pagenav .nav-list a
-  width 20%
-  border-top 0
-  border-right-width 1px
-  &:last-child
-    border-right 0
+html.app-list .pagenav .nav-list
+html.news-center .pagenav .nav-list
+  padding 0
+  background #D00
+  a
+    width 20%
+    color #fff
+    // border-top 0
+    // border-right-width 1px
+    // &:last-child
+    //   border-right 0
 
 .w-cnt-news
   h2.title
-    display inline-block
-    margin 1rem 0 0
+    margin 15px 0 0
+    color red
+    // display inline-block
+    // margin 1rem 0 0
     // padding .1em .4em
-    padding 3px .4rem 2px // 在手机中文字不垂直居中
-    line-height 1
-    font-size 14px
-    color #fff
-    background-color #d00
+    // padding 3px .4rem 2px // 在手机中文字不垂直居中
+    // line-height 1
+    // font-size 14px
+    // color #fff
+    // background-color #d00
   h3.title
     margin .5rem 0
     color blue
@@ -1474,7 +1616,7 @@ html.news-center .pagenav .nav-list a
     .comment-bar
       margin 10px 0
       padding-bottom 3px
-      border-bottom 1px #DEDEDE solid
+      border-bottom 1px $lgray solid
       text-align right
       label
         font-size .8rem
@@ -1507,7 +1649,7 @@ html.news-center .pagenav .nav-list a
         display flex
         padding-bottom 10px
         margin-bottom 20px
-        border-bottom 1px #DEDEDE solid
+        border-bottom 1px $lgray solid
         word-wrap break-word
         &:last-child
           border none
@@ -1536,34 +1678,46 @@ html.news-center .pagenav .nav-list a
             font-size .8rem
   .pagenav-ft
     margin-top 2rem
-    padding 0 10px
-    h3
-      margin-bottom 3px
-      font-size .88rem
+    margin-bottom -30px
+    padding-bottom 30px
+    // padding 0 10px
+    background #F3F3F3
+    // h3
+    //   margin-bottom 3px
+    //   font-size .88rem
     .nav-list a
+      height 37px
+      line-height 37px
+      border 0 solid #c5c5c5
+      border-right-width 1px
+      border-bottom-width 1px
       color blue
       font-size 14px
-      border-color #CDCDCD !important
-      border-top-width 1px
       background #F3F3F3
+      &:nth-child(4n)
+        border-right-width 0
       &.more:after
         border-top-color blue
       &.more.fold:after
         border-top-color transparent
         border-bottom-color blue
 
+html.article #footer
+  // margin-top 0
+  border-top 0
+
 // 横屏
-@media only screen and (min-width 321px) and (orientation landscape)
-  .cnt-news
-    .news-related
-      .w-list-item
-        height 40px
-        a
-          margin-top 0
-          margin-bottom 0
-          max-height none
-          line-height inherit
-          white-space nowrap
+// @media only screen and (min-width 321px) and (orientation landscape)
+//   .cnt-news
+//     .news-related
+//       .w-list-item
+//         height 40px
+//         a
+//           margin-top 0
+//           margin-bottom 0
+//           max-height none
+//           line-height inherit
+//           white-space nowrap
 
 #sharebtn
   display block
@@ -1585,7 +1739,43 @@ html.news-center .pagenav .nav-list a
     background-size 45px
     vertical-align top
 
-/** 子站配色 **/
+/** 导航定制 **/
+/* 主站 */
+html.home
+  // #header
+  //   border-bottom-color #eee
+  .pagenav
+    // background url(../img/bg-header-home.png) repeat-x 0 -1px
+    .nav-list
+      margin 0 10px
+      a:nth-of-type(4n+1)
+        width 29%
+      a:nth-of-type(4n+2)
+        width 32%
+      a:nth-of-type(4n+3)
+        width 19%
+      a:nth-of-type(4n)
+        width 20%
+
+/* 半导体照明网 */
+html.lights
+  #header
+    border-color #D40000
+  .pagenav .nav-list
+    background #DD0000
+    a
+      // border-color #034DAD
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
+  // .w-box-hd
+  //   border-color #034DAD
+  //   .title
+  //     color #0459B8
+
 /* 物联网 */
 html.iot
   #header
@@ -1593,7 +1783,13 @@ html.iot
   .pagenav .nav-list
     background #0459B8
     a
-      border-color #034DAD
+      // border-color #034DAD
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
   .w-box-hd
     border-color #034DAD
     .title
@@ -1606,7 +1802,13 @@ html.nev
   .pagenav .nav-list
     background #1170BB
     a
-      border-color #0E61AB
+      // border-color #0E61AB
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
   .w-box-hd
     border-color #0E61AB
     .title
@@ -1619,7 +1821,13 @@ html.libattery
   .pagenav .nav-list
     background #E20000
     a
-      border-color #ED242F
+      // border-color #ED242F
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
   .w-box-hd
     border-color #ED242F
     .title
@@ -1632,7 +1840,13 @@ html.ecep
   .pagenav .nav-list
     background #34A637
     a
-      border-color #2B862D
+      // border-color #2B862D
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
   .w-box-hd
     border-color #2B862D
     .title
@@ -1645,7 +1859,13 @@ html.wearable
   .pagenav .nav-list
     background #F15C00
     a
-      border-color #E15500
+      // border-color #E15500
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
   .w-box-hd
     border-color #E15500
     .title
@@ -1658,7 +1878,13 @@ html.smarthome
   .pagenav .nav-list
     background #019BB5
     a
-      border-color #018FA9
+      // border-color #018FA9
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
   .w-box-hd
     border-color #018FA9
     .title
@@ -1671,7 +1897,13 @@ html.robot
   .pagenav .nav-list
     background #0A6375
     a
-      border-color #0A5869
+      // border-color #0A5869
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
   .w-box-hd
     border-color #0A5869
     .title
@@ -1684,7 +1916,13 @@ html.ee
   .pagenav .nav-list
     background #07237A
     a
-      border-color #0F4784
+      // border-color #0F4784
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
   .w-box-hd
     border-color #0F4784
     .title
@@ -1697,7 +1935,13 @@ html.threedprint
   .pagenav .nav-list
     background #C60000
     a
-      border-color #D97975
+      // border-color #D97975
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
   .w-box-hd
     border-color #D97975
     .title
@@ -1710,7 +1954,13 @@ html.medtech
   .pagenav .nav-list
     background #0895D3
     a
-      border-color #00ACEE
+      // border-color #00ACEE
+      color #fff
+      &.more:after
+        border-top-color #fff
+      &.more.fold:after
+        border-top-color transparent
+        border-bottom-color #fff
   .w-box-hd
     border-color #00ACEE
     .title

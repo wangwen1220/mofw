@@ -12,29 +12,41 @@ include 'header.html';
   <div id="main">
     <nav class="pagenav">
       <div class="nav-list">
-        <a href="#">首页</a>
         <a href="#">半导体照明</a>
+        <a href="#">电子工程</a>
+        <a href="#">工控</a>
         <a href="#">激光</a>
+        <a href="#">太阳能光伏</a>
+        <a href="#">智能家居</a>
+        <a href="#">机器人</a>
+        <a href="#">显示</a>
+        <a href="#">新能源汽车</a>
+        <a href="#">医疗科技</a>
+        <a href="#">光通讯</a>
+        <a href="#">电子</a>
+        <a href="#">半导体照明</a>
+        <a href="#">电子工程</a>
+        <a href="#">工控</a>
+        <a href="#">激光</a>
+        <a href="#">太阳能光伏</a>
+        <a href="#">智能家居</a>
+        <a href="#">机器人</a>
+        <a href="#">显示</a>
+        <a href="#">新能源汽车</a>
+        <a href="#">医疗科技</a>
+        <a href="#">光通讯</a>
+        <a href="#">通信</a>
+        <a href="#">可穿戴设备</a>
+        <a href="#">智能电网</a>
+        <a href="#">物联网</a>
+        <a href="#">锂电</a>
+        <a href="#">3D打印</a>
+        <a href="#">节能环保</a>
+        <a href="#">电力</a>
+        <a href="#">电源</a>
+        <a href="#">仪器仪表</a>
         <a href="#">照明</a>
-        <a href="#">电子工程</a>
-        <a href="#">首页</a>
-        <a href="#">新品</a>
-        <a href="#">市场</a>
-        <a href="#">电子工程</a>
-        <a href="#">首页</a>
-        <a href="#">新品</a>
-        <a href="#">市场</a>
-        <a href="#">电子工程</a>
-        <a href="#">首页</a>
-        <a href="#">新品</a>
-        <a href="#">市场</a>
-        <a href="#">电子工程</a>
-        <a href="#">首页</a>
-        <a href="#">新品</a>
-        <a href="#">市场</a>
-        <a href="#">技术</a>
-        <a href="#">视频</a>
-        <a href="#">视网频</a>
+        <a href="#">风电</a>
         <a class="more">更多</a>
       </div>
     </nav>
@@ -82,12 +94,13 @@ include 'header.html';
 
       <h3 class="title"><a href="#">新闻中心</a></h3>
       <form action="#" class="w-search js-search">
-        <input type="text" name="q" />
+        <input type="text" name="q">
         <button type="submit">搜索</button>
       </form>
     </div>
 
-    <div class="ad mxh70"><a href="#"><img src="http://m.hao123.com/static/img/banner/hsy725.jpg" alt="ad" /></a></div>
+    <!-- <div class="ad mxh70"><a href="#"><img src="http://m.hao123.com/static/img/banner/hsy725.jpg" alt="ad"></a></div> -->
+    <div class="ofwad ad mxh70" data-adid="5"></div>
 
     <div class="w-box">
       <div class="w-box-hd">
@@ -95,7 +108,7 @@ include 'header.html';
       </div>
       <div class="w-box-bd">
         <div class="w-art">
-          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="75" height="75" /></a>
+          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="75" height="75"></a>
           <div class="txt">
             <h3><a href="#">男子在西安交警队院内坠亡中国空军跟踪监视两次企图抵近元芳同学这张图你怎么看毕业季8招让你的简历脱颖而出</a></h3>
           </div>
@@ -135,6 +148,8 @@ include 'header.html';
       </div>
     </div>
 
+    <div class="ofwad ad mxh70" data-adid="6"></div>
+
     <div class="w-box">
       <div class="w-box-hd">
         <h2 class="title">访谈</h2>
@@ -142,25 +157,25 @@ include 'header.html';
       <div class="w-box-bd">
         <div class="w-art-wrap">
           <div class="w-art">
-            <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="75" height="75" /></a>
+            <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="75" height="75"></a>
             <div class="txt">
               <h3><a href="#">男子在西安一交警队院内坠亡中国空军跟踪监视两次企图抵近，元芳同学这张图你怎么看，毕业季8招让你的简历脱颖而出</a></h3>
             </div>
           </div>
           <div class="w-art">
-            <a href="#" class="pic"><img src="http://img1.cache.netease.com/3g/2014/8/7/20140807145747e43ce.jpg" alt="" width="75" height="75" /></a>
+            <a href="#" class="pic"><img src="http://img1.cache.netease.com/3g/2014/8/7/20140807145747e43ce.jpg" alt="" width="75" height="75"></a>
             <div class="txt">
               <h3><a href="#">男子在西安一交警队院内坠亡中国空军跟踪监视两次企图抵近，元芳同学这张图你怎么看，毕业季8招让你的简历脱颖而出</a></h3>
             </div>
           </div>
           <div class="w-art">
-            <a href="#" class="pic"><img src="http://img1.cache.netease.com/3g/2014/8/7/20140807145747e43ce.jpg" alt="" width="75" height="75" /></a>
+            <a href="#" class="pic"><img src="http://img1.cache.netease.com/3g/2014/8/7/20140807145747e43ce.jpg" alt="" width="75" height="75"></a>
             <div class="txt">
               <h3><a href="#">男子在西安一交警队院内坠亡中国空军跟踪监视两次企图抵近，元芳同学这张图你怎么看，毕业季8招让你的简历脱颖而出</a></h3>
             </div>
           </div>
           <div class="w-art">
-            <a href="#" class="pic"><img src="http://img1.cache.netease.com/3g/2014/8/7/20140807145747e43ce.jpg" alt="" width="75" height="75" /></a>
+            <a href="#" class="pic"><img src="http://img1.cache.netease.com/3g/2014/8/7/20140807145747e43ce.jpg" alt="" width="75" height="75"></a>
             <div class="txt">
               <h3><a href="#">男子在西安一交警队院内坠亡中国空军跟踪监视两次企图抵近，元芳同学这张图你怎么看，毕业季8招让你的简历脱颖而出</a></h3>
             </div>
@@ -168,6 +183,8 @@ include 'header.html';
         </div>
       </div>
     </div>
+
+    <div class="ofwad ad mxh70" data-adid="491"></div>
 
     <div class="w-box">
       <div class="w-box-hd">
@@ -179,13 +196,13 @@ include 'header.html';
       <div class="w-box-bd ui-refresh">
         <div class="w-art-wrap">
           <div class="w-art">
-            <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="75" height="75" /></a>
+            <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="75" height="75"></a>
             <div class="txt">
               <h3><a href="#">男子在西安一交警队院内坠亡中国空军跟踪监视两次企图抵近，元芳同学这张图你怎么看，毕业季8招让你的简历脱颖而出</a></h3>
             </div>
           </div>
           <div class="w-art">
-            <a href="#" class="pic"><img src="http://img1.cache.netease.com/3g/2014/8/7/201408071624316322b.jpg" alt="" width="75" height="75" /></a>
+            <a href="#" class="pic"><img src="http://img1.cache.netease.com/3g/2014/8/7/201408071624316322b.jpg" alt="" width="75" height="75"></a>
             <div class="txt">
               <h3><a href="#">子在西厦大女神淡雅脱俗变海归亡中国空军跟踪监视两次企图抵近</a></h3>
             </div>
@@ -229,7 +246,7 @@ include 'header.html';
       </div>
       <div class="w-box-bd ui-refresh">
         <div class="w-art">
-          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84" /></a>
+          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84"></a>
           <div class="txt">
             <h3><a href="#">子在西厦大女神淡雅脱俗变海归亡中国空军跟踪监视两次企图抵近</a></h3>
           </div>
@@ -250,7 +267,7 @@ include 'header.html';
       </div>
       <div class="w-box-bd ui-refresh">
         <div class="w-art">
-          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84" /></a>
+          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84"></a>
           <div class="txt">
             <h3><a href="#">子在西厦大女神淡雅脱俗变海归亡中国空军跟踪监视两次企图抵近</a></h3>
           </div>
@@ -271,7 +288,7 @@ include 'header.html';
       </div>
       <div class="w-box-bd ui-refresh">
         <div class="w-art">
-          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84" /></a>
+          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84"></a>
           <div class="txt">
             <h3><a href="#">子在西厦大女神淡雅脱俗变海归亡中国空军跟踪监视两次企图抵近</a></h3>
           </div>
@@ -292,7 +309,7 @@ include 'header.html';
       </div>
       <div class="w-box-bd ui-refresh">
         <div class="w-art">
-          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84" /></a>
+          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84"></a>
           <div class="txt">
             <h3><a href="#">子在西厦大女神淡雅脱俗变海归亡中国空军跟踪监视两次企图抵近</a></h3>
           </div>
@@ -313,7 +330,7 @@ include 'header.html';
       </div>
       <div class="w-box-bd ui-refresh">
         <div class="w-art">
-          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84" /></a>
+          <a href="#" class="pic"><img src="http://img4.cache.netease.com/3g/2014/8/7/2014080711022223e0b.jpg" alt="" width="117" height="84"></a>
           <div class="txt">
             <h3><a href="#">子在西厦大女神淡雅脱俗变海归亡中国空军跟踪监视两次企图抵近</a></h3>
           </div>

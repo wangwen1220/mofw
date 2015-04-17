@@ -1,0 +1,1 @@
+document.write('<img src="http://images.sohu.com/saf/a2015/0115/wKiDRFS3c3SALaf9AAAv7AWIPew478640x120.jpg" border="0" style="max-width:100%; max-height:auto;margin:0 auto;">');

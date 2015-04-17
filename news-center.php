@@ -12,7 +12,7 @@ include 'header.html';
     <nav class="pagenav">
       <div class="nav-list">
         <a href="#">国内</a>
-        <a href="#">国际</a>
+        <a class="on" href="#">国际</a>
         <a href="#">财经</a>
         <a href="#">企业</a>
         <a href="#">新品</a>

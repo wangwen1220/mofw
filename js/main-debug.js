@@ -7,7 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // Main
-(function($) {
+(function(win, $, undefined) {
   jQuery.noConflict();
 
   // Helpers
@@ -169,7 +169,19 @@
     });
 
     // 显示全部文章
-    $('#js-art').on('click', '.w-viewmore', function(event) {
+    // $('#js-art').on('click', '.w-viewmore', function(event) {
+    //   event.preventDefault();
+
+    //   var $this = $(this);
+    //   var url = $this.data('url');
+
+    //   // $(this).hide().siblings('.js-hide').removeClass('js-hide');
+    //   $.get(url, function(html) {
+    //     // html = '<p>OK</p>';
+    //     $this.before(html).hide();
+    //   });
+    // });
+    $('#js-art').on('click', '.js-viewall', function(event) {
       event.preventDefault();
 
       var $this = $(this);
@@ -177,8 +189,8 @@
 
       // $(this).hide().siblings('.js-hide').removeClass('js-hide');
       $.get(url, function(html) {
-        // html = '<p>OK</p>';
-        $this.before(html).hide();
+        // html = 'test';
+        $this.parent().before(html).find('.next, .disabled').add($this).hide();
       });
     });
 
@@ -389,6 +401,106 @@
     //   }
     // });
 
+    // 广告加载系统
+    (function() {
+      // 队列控制
+      var loadQueue = [];
+
+      // 入列
+      var queue = function(data) {
+        loadQueue.push(data);
+        if (loadQueue[0] !== 'runing') {
+          dequeue();
+        }
+      };
+
+      // 出列
+      var dequeue = function() {
+        var fn = loadQueue.shift();
+        if (fn === 'runing') {
+          fn = loadQueue.shift();
+        }
+
+        if (fn) {
+          loadQueue.unshift('runing');
+          fn();
+        }
+      };
+
+      // 重写 document.write 实现无阻塞加载广告
+      var loadAD = function(elem) {
+        var doc = window.document;
+        var loc = window.location;
+        var dw = doc.write; // 缓存原生的 document.write
+        var script = doc.createElement('script'); // 创建一个新 script 来加载
+        var head = doc.head || doc.getElementsByTagName('head')[0] || doc.documentElement;
+        var protocol = loc.protocol === 'https:' ? 'https://' : 'http://';
+        var rand = Math.floor(Math.random() * 99999999999);
+        var adid = elem.getAttribute('data-adid');
+        var url = protocol + 'd1.ofweek.com/www/delivery/ajs.php?zoneid=' + adid + '&cb=' + rand + "&loc=" + escape(loc);
+        doc.MAX_used = doc.MAX_used || ',';
+
+        if (doc.MAX_used !== ',') {
+          url += '&exclude=' + doc.MAX_used;
+        }
+
+        if (doc.charset) {
+          url += '&charset=' + doc.charset;
+        } else if (doc.characterSet) {
+          url += '&charset=' + doc.characterSet;
+        }
+
+        if (doc.referrer) {
+          url += '&referer=' + escape(doc.referrer);
+        }
+
+        if (doc.context) {
+          url += '&context=' + escape(doc.context);
+        }
+        if (!doc.mmm_fo) {
+          url += '&mmm_fo=1';
+        }
+
+        // 重写 document.write
+        document.write = function(ad) {
+          elem.innerHTML = ad;
+        };
+
+        // script.type = 'text/javascript';
+        script.src = url;
+
+        script.onerror = script.onload = script.onreadystatechange = function(e) {
+          e = e || window.event;
+          if (!script.readyState || /loaded|complete/.test(script.readyState) || e === 'error') {
+            // 恢复原生的 document.write
+            document.write = dw;
+            head.removeChild(script);
+
+            // 卸载事件和断开 DOM 的引用，尽量避免内存泄漏
+            head =
+            elem =
+            script =
+            script.onerror =
+            script.onload =
+            script.onreadystatechange = null;
+
+            dequeue();
+          }
+        }
+
+        // 加载广告脚本
+        // head.insertBefore(script, head.firstChild);
+        head.appendChild(script);
+      };
+
+      // 加载广告
+      $('.ofwad').each(function(i, elem) {
+        queue(function() {
+          loadAD(elem);
+        });
+      });
+    })();
+
     // 返回顶部
     $gotop.on('click', function(event) {
       window.scrollTo(0, 0);
@@ -410,4 +522,4 @@
     //   return false;
     // });
   });
-})(Zepto);
+})(window, Zepto);

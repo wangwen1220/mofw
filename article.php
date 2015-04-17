@@ -10,7 +10,12 @@ include 'header.html';
 ?>
 
   <div id="main" class="cnt-news">
-    <div class="ad mxh70"><a href="#"><img src="http://m.hao123.com/static/img/banner/hsy725.jpg" alt="ad" /></a></div>
+    <div class="adtext"><a href="http://d1.ofweek.com/www/delivery/ck.php?oaparams=2__bannerid=2526__zoneid=459__cb=938ffff583__oadest=https%3A%2F%2Fjinshuju.net%2Ff%2F7mdFNR" rel="nofollow" title="第五届OFweek 中国太阳能光伏产业高峰论坛">第五届OFweek 中国太阳能光伏产业高峰论坛</a></div>
+    <!-- <div class="ad mxh70"><a href="#"><img src="http://m.hao123.com/static/img/banner/hsy725.jpg" alt="ad"></a></div> -->
+    <div class="ad mt0">
+      <a href="http://d1.ofweek.com/www/delivery/ck.php?oaparams=2__bannerid=2502__zoneid=1152__cb=f0be313f87__oadest=https%3A%2F%2Fjinshuju.net%2Ff%2FZZN0qf"><img src="/img/proimg/article.png"></a>
+      <!-- <a href="http://d1.ofweek.com/www/delivery/ck.php?oaparams=2__bannerid=2502__zoneid=1152__cb=f0be313f87__oadest=https%3A%2F%2Fjinshuju.net%2Ff%2FZZN0qf"><img src="http://m.lights.ofweek.com/img/gg/article.png"></a> -->
+    </div>
     <section class="news-content">
       <h1>男子在西安一交警队院内坠亡中国空军跟踪监视两次企图抵近男子在西安一交警队院内坠亡中国空军跟踪监视两次企图抵近</h1>
       <div class="from">
@@ -31,7 +36,12 @@ include 'header.html';
           <p>大连阿尔滨上轮主场负于恒大之后，目前和降级区的辽足只有3个积分的差距，保级也是提上了日程，而且球队最近5轮比赛3平2负未尝胜绩，而且最近3个主场比赛阿尔滨都是未能取胜，和阿尔滨主场疲软相比，绿地的客场战绩则一直是他们的桎梏，在上海之外进行的客场联赛中，绿地已经连续32场不胜，这样的纪录令人瞠目结舌，最近4轮比赛，绿地2平2负也是难求一胜。两支近况不佳的球队遭遇，是绿地打破出上海不会赢球的魔咒，还是阿尔滨在绿地身上止住不胜的颓势？两队中超交锋纪录以1胜3平1负平分秋色，其中阿尔滨在主场1胜1平保持不败，双方赛季首循环交锋时，绿地主场以2-0胜出。</p>
           <p>这是恒大在亚冠之前的最后一场联赛，之前和泰达在中超交手7次，恒大取得了5胜1平1负的战绩，而其中的这场输球就出现在上赛季，也是恒大去年联赛的唯一一场失利。本赛季首循环的较量，恒大在客场5-2横扫泰达复仇，上轮联赛2-1战胜大连阿尔滨后，恒大终于走出吉拉迪诺进球球队必输的死循环，加上迪亚曼蒂上轮解禁复出，恒大的最强阵容也是出炉。泰达上轮不敌舜天后，联赛中已经遭遇了4轮不胜，球队冲击亚冠资格的希望基本化为泡影。国安上轮不敌富力之后，恒大将领先优势重新扩大至7分，随着亚冠联赛的重启，恒大必然要分心，主场对垒泰达这也是一场必须取胜的比赛，同时这场比赛也是防守悍将赵旭日加盟恒大后的第xx场比赛。</p>
         </div>
-        <a data-url="refresh.php" class="w-viewmore">余下全文</a>
+        <!-- <a data-url="refresh.php" class="w-viewmore">余下全文</a> -->
+        <div class="m-page">
+          <a class="prev disabled">上一页</a>
+          <a class="next" href="#">下一页</a>
+          <a data-url="ajax-art.php" class="viewall js-viewall">余下全文 1/2</a>
+        </div>
       </article>
     </section>
 
@@ -71,8 +81,10 @@ include 'header.html';
       </style>
     </section>
 
+    <div class="ad"><a href="http://d1.ofweek.com/www/delivery/ck.php?oaparams=2__bannerid=2476__zoneid=459__cb=4d9d154b8d__oadest=https%3A%2F%2Fjinshuju.net%2Ff%2FNDUrOx" target="_blank"><img src="http://192.168.2.123/index.php?m=file&f=download&fileID=20948" alt=""></a></div>
+
     <section class="w-cnt w-cnt-news news-related">
-      <h2 class="title">今日要闻</h2>
+      <h2 class="title">相关推荐</h2>
       <ul class="w-list">
         <li class="w-list-item"><a href="#">厦大女神淡雅脱俗变海归(图)</a></li>
         <li class="w-list-item"><a href="#">毕业季8招让你的简历脱颖而出</a></li>
@@ -156,7 +168,7 @@ include 'header.html';
     </div>
 
     <nav class="pagenav pagenav-ft">
-      <h3>频道导航</h3>
+      <!-- <h3>频道导航</h3> -->
       <div class="nav-list">
         <a href="#">首页</a>
         <a href="#">半导体照明</a>

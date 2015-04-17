@@ -22,28 +22,24 @@ include 'header.html';
     <nav class="pagenav">
       <div class="nav-list">
         <a href="#">首页</a>
-        <a href="#">半导体照明</a>
+        <a href="#">照明</a>
         <a href="#">激光</a>
         <a href="#">照明</a>
-        <a href="#">电子工程</a>
+        <a href="#">电子</a>
         <a href="#">首页</a>
         <a href="#">新品</a>
         <a href="#">市场</a>
-        <a href="#">电子工程</a>
         <a href="#">首页</a>
         <a href="#">新品</a>
         <a href="#">市场</a>
-        <a href="#">电子工程</a>
         <a href="#">首页</a>
         <a href="#">新品</a>
         <a href="#">市场</a>
-        <a href="#">电子工程</a>
         <a href="#">首页</a>
         <a href="#">新品</a>
         <a href="#">市场</a>
         <a href="#">技术</a>
         <a href="#">视频</a>
-        <a href="#">视网频</a>
         <a class="more">更多</a>
       </div>
     </nav>
