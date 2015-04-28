@@ -1,11 +1,12 @@
 <?php
 require_once 'config.php';
 
-$class = 'subsite lights';
+// $class = 'subsite lights';
 // $class = 'subsite iot';
-// $class = 'subsite threedprint';
+$class = 'subsite threedprint';
 // $class = 'subsite ee';
 // $class = 'subsite robot';
+// $class = 'subsite gongkong';
 // $class = 'subsite smarthome';
 // $class = 'subsite nev';
 // $class = 'subsite libattery';
@@ -71,6 +72,8 @@ include 'header.html';
         <button type="submit">搜索</button>
       </form>
     </div>
+
+    <div class="ad mt0"><a href="http://d1.ofweek.com/www/delivery /ck.php?oaparams=2__bannerid=2545__zoneid=459__cb=e0f6ed1dc9__oadest=https%3A%2F%2Fjinshuju.net%2Ff%2F5xCc5j" rel="nofollow"><img src="http://192.168.2.123/data/upload/1/201504/2209475404948d9.png"></a></div>
 
     <ul id="slider" class="fn-hide">
       <li>

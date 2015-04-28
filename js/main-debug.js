@@ -2,13 +2,13 @@
 // 名称: 主程序
 // 作者: Steven
 // 链接: http://wenwang.org/
-// 说明: Require jQuery
+// 说明: Require Zepto
 // 更新: 2014-8-1
 ////////////////////////////////////////////////////////////////////////////////
 
 // Main
 (function(win, $, undefined) {
-  jQuery.noConflict();
+  // jQuery.noConflict();
 
   // Helpers
   var isIE6 = !!window.ActiveXObject && !window.XMLHttpRequest;
@@ -76,10 +76,10 @@
       FastClick.attach(document.body);
     }
 
-    // 多行文字省略号
-    jQuery('#main').find('.w-art').not('.w-art-hr').find('.txt h3').dotdotdot({
-      watch: 'window'
-    });
+    // 多行文字省略号 - 某些情况下有问题暂时关掉
+    // jQuery('#main').find('.w-art').not('.w-art-hr').find('.txt h3').dotdotdot({
+    //   watch: 'window'
+    // });
 
     // 导航下拉菜单
     $header.on('click fastclick', '.sitenav > .dropmenu-trigger', function(event) {
