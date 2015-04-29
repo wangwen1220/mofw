@@ -486,7 +486,7 @@
 
             dequeue();
           }
-        }
+        };
 
         // 加载广告脚本
         // head.insertBefore(script, head.firstChild);

@@ -73,7 +73,7 @@ include 'header.html';
       </form>
     </div>
 
-    <div class="ad mt0"><a href="http://d1.ofweek.com/www/delivery /ck.php?oaparams=2__bannerid=2545__zoneid=459__cb=e0f6ed1dc9__oadest=https%3A%2F%2Fjinshuju.net%2Ff%2F5xCc5j" rel="nofollow"><img src="http://192.168.2.123/data/upload/1/201504/2209475404948d9.png"></a></div>
+    <div class="ad mt0"><a href="http://d1.ofweek.com/www/delivery /ck.php?oaparams=2__bannerid=2545__zoneid=459__cb=e0f6ed1dc9__oadest=https%3A%2F%2Fjinshuju.net%2Ff%2F5xCc5j" rel="nofollow"><img src="http://192.168.2.123/data/upload/1/201504/281459030944250c.png"></a></div>
 
     <ul id="slider" class="fn-hide">
       <li>
